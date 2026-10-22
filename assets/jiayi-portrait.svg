@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f9e8fa"/><stop offset=".52" stop-color="#ded1ff"/><stop offset="1" stop-color="#f5f3fa"/></linearGradient><linearGradient id="hair" x2="1" y2="1"><stop stop-color="#15121b"/><stop offset=".55" stop-color="#312536"/><stop offset="1" stop-color="#08080c"/></linearGradient><linearGradient id="skin" x2=".8" y2="1"><stop stop-color="#f7d9cd"/><stop offset="1" stop-color="#d9a99d"/></linearGradient><linearGradient id="jacket" x2="1" y2="1"><stop stop-color="#24212b"/><stop offset=".5" stop-color="#08090e"/><stop offset="1" stop-color="#4a414e"/></linearGradient></defs>
+<rect width="600" height="700" rx="28" fill="url(#bg)"/><circle cx="310" cy="270" r="220" fill="#fff" opacity=".35"/><ellipse cx="304" cy="637" rx="200" ry="28" fill="#b99bc9" opacity=".25"/>
+<path d="M105 700 Q120 490 206 456 L254 438 352 438 402 456 Q493 493 510 700Z" fill="url(#jacket)"/><path d="M250 438 L300 510 350 438 331 700 270 700Z" fill="#f5f0f4"/><path d="M267 450 L300 495 334 450 321 700 280 700Z" fill="#1b1721"/><path d="M245 423 L248 470 300 521 352 470 355 423Z" fill="url(#skin)"/>
+<path d="M186 180 Q190 66 300 64 Q422 63 428 190 L421 351 Q398 430 300 445 Q205 430 181 349Z" fill="url(#hair)"/>
+<path d="M208 183 Q213 107 300 104 Q385 104 400 182 L389 304 Q375 381 300 391 Q226 380 211 304Z" fill="url(#skin)"/>
+<path d="M198 203 Q170 123 221 77 Q256 39 320 50 Q404 57 431 127 L414 232 390 173 Q359 153 334 128 Q291 159 231 158 L218 252Z" fill="url(#hair)"/>
+<path d="M211 170 Q235 140 263 145 Q284 146 296 159 Q273 177 244 177Z" fill="#17121b"/><path d="M305 159 Q331 140 359 147 Q378 151 389 172 Q355 177 327 171Z" fill="#17121b"/>
+<path d="M232 207 Q255 191 277 205" fill="none" stroke="#211821" stroke-width="8" stroke-linecap="round"/><path d="M325 205 Q349 191 371 207" fill="none" stroke="#211821" stroke-width="8" stroke-linecap="round"/>
+<path d="M235 223 Q254 235 276 222" fill="none" stroke="#30212a" stroke-width="5" stroke-linecap="round"/><path d="M328 222 Q349 235 369 222" fill="none" stroke="#30212a" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="255" cy="222" rx="6" ry="8" fill="#201722"/><ellipse cx="350" cy="222" rx="6" ry="8" fill="#201722"/><circle cx="257" cy="219" r="2" fill="#fff"/><circle cx="352" cy="219" r="2" fill="#fff"/>
+<path d="M301 225 L289 269 Q299 278 311 269" fill="none" stroke="#bd8e87" stroke-width="4" stroke-linecap="round"/><path d="M276 300 Q300 314 325 299 Q313 329 300 326 Q285 324 276 300Z" fill="#9c536b"/><path d="M280 302 Q300 307 321 301" fill="none" stroke="#f3b3bc" stroke-width="3"/>
+<path d="M207 260 Q194 346 235 389 L214 337Z" fill="url(#hair)"/><path d="M393 256 Q407 347 367 390 L389 330Z" fill="url(#hair)"/>
+<path d="M130 545 L207 467 267 494 300 556 334 494 393 467 470 545 499 700 100 700Z" fill="url(#jacket)"/><path d="M207 467 L268 494 300 556 267 700 210 604Z" fill="#312b38"/><path d="M393 467 L334 494 300 556 333 700 390 604Z" fill="#17141c"/>
+<path d="M230 478 L300 555 370 478" fill="none" stroke="#f0dff5" stroke-width="3" opacity=".8"/><path d="M244 475 L300 530 356 475" fill="none" stroke="#bca4ff" stroke-width="2"/>
+<text x="28" y="54" font-family="Arial,sans-serif" font-size="17" letter-spacing="4" fill="#7e5c8c">JIAYI.exe / IDENTITY PREVIEW</text><text x="30" y="665" font-family="Arial,sans-serif" font-size="12" letter-spacing="3" fill="#7e5c8c">TEMPORARY VECTOR PLACEHOLDER</text>
+</svg>
