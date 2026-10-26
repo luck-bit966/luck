@@ -129,5 +129,6 @@ const modal=document.getElementById('modal');
 function openModal(d){document.getElementById('mk').textContent=d.k;document.getElementById('mt').textContent=d.t;document.getElementById('md').textContent=d.d;document.getElementById('mediaMark').textContent=d.mark;document.getElementById('mediaSub').textContent=d.sub;document.getElementById('mediaType').textContent=d.type;document.getElementById('mediaRatio').textContent=d.ratio;let c=document.getElementById('mchips');c.replaceChildren(...d.chips.map(t=>{let s=document.createElement('span');s.textContent=t;return s}));modal.classList.add('open');document.body.style.overflow='hidden';document.getElementById('close').focus()}
 document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',()=>openModal((()=>{let d=data[b.dataset.modal];return {k:d[0],t:d[1],d:d[2],chips:d[3],mark:d[1],sub:'PROJECT DETAILS',type:'PROJECT',ratio:'—'}})())));
 document.querySelectorAll('[data-work]').forEach(b=>b.addEventListener('click',()=>openModal(works[b.dataset.work])));
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
 document.getElementById('close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script></body></html>
