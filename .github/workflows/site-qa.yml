@@ -1,0 +1,30 @@
+name: Portfolio visual & functional QA
+on:
+  push:
+    branches: [main]
+    paths: ['index.html', 'assets/**', '.github/workflows/site-qa.yml', 'scripts/site-qa.mjs']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Test desktop and mobile
+        run: node scripts/site-qa.mjs
+      - name: Save visual audit screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jiayi-visual-audit
+          path: qa-results/
+          if-no-files-found: ignore
