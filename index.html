@@ -24,6 +24,23 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 @media(max-width:560px){nav{height:62px}.navlinks{gap:12px}.navlinks a{font-size:10px}.navlinks a:nth-child(3),.navlinks a:nth-child(4){display:none}.contact{display:none}.hero{padding:36px 5vw 25px}.eyebrow{font-size:9px}h1{font-size:clamp(49px,14vw,74px)}.hand{font-size:16px}.role{font-size:12px}.desc{font-size:13px}.stage{min-height:420px}.portrait-wrap{width:76vw;min-width:0}.orbit{width:85vw}.sticker{padding:10px 12px}.tools{right:-2%;top:8%}.note{left:0;bottom:18%;font-size:13px}.project{right:-2%;bottom:4%;width:145px}.metrics{gap:16px}.metric strong{font-size:21px}.sectionhead{display:block}.sectionhead p{margin-top:15px}.cards{grid-template-columns:1fr}.card{min-height:190px}.about{margin:0 5vw 45px;border-radius:18px;padding:25px}.about h2{font-size:42px}.footerbig{font-size:48px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
+/* JIAYI.exe / screen 02 — welcome interlude */
+.world{position:relative;isolation:isolate;overflow:hidden;min-height:76svh;margin:0;padding:clamp(90px,13vw,170px) 8vw;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:#100d15}
+.world:before,.world:after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px)}
+.world:before{width:min(68vw,760px);aspect-ratio:1;left:-18%;top:5%;background:radial-gradient(circle,#f04fba30 0,transparent 68%);animation:world-drift 11s ease-in-out infinite alternate}
+.world:after{width:min(55vw,620px);aspect-ratio:1;right:-15%;bottom:-12%;background:radial-gradient(circle,#bba3ff24 0,transparent 70%);animation:world-drift 13s ease-in-out infinite alternate-reverse}
+.world-inner{width:min(100%,1000px);position:relative}
+.world-index{font:10px/1.5 Inter,Arial,sans-serif;letter-spacing:.28em;color:#ef86dc;text-transform:uppercase}
+.world h2{margin:25px 0 20px;font-size:clamp(44px,9vw,112px);line-height:.98;letter-spacing:-.065em;font-weight:850}
+.world h2 span{display:block;color:#ef86dc;text-shadow:0 0 38px #ef86dc30}
+.world p{max-width:560px;margin:0 auto;color:#d4c9d8;font-size:clamp(13px,1.5vw,17px);line-height:1.9}
+.world-orbit{position:absolute;left:50%;top:50%;width:min(76vw,820px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #ffffff0b;border-radius:50%;pointer-events:none}
+.world-orbit:before,.world-orbit:after{content:"";position:absolute;border:1px solid #ef86dc20;border-radius:50%;inset:9%}
+.world-orbit:after{inset:20%;border-color:#bba3ff1c}
+@keyframes world-drift{from{transform:translate3d(-2%,0,0) scale(.94)}to{transform:translate3d(3%,-2%,0) scale(1.08)}}
+@media(max-width:560px){.world{min-height:66svh;padding:90px 7vw}.world h2{font-size:clamp(43px,12vw,66px)}.world-orbit{width:110vw}}
+@media(prefers-reduced-motion:reduce){.world:before,.world:after{animation:none}}
+
 /* JIAYI.exe selected works — V15 */
 .works{padding:100px 4vw 110px;background:#111015;color:#f9f4fb;position:relative;overflow:hidden}
 .works:before{content:"";position:absolute;width:58vw;height:58vw;right:-18vw;top:-22vw;border:1px solid #ef80dc66;border-radius:50%;box-shadow:0 0 0 35px #ef80dc0d,0 0 0 80px #bba3ff0a;pointer-events:none}
@@ -201,10 +218,18 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </style>
 </head><body>
 <div class="boot" id="boot"><div><b>JIAYI<span>.exe</span></b><div class="load"><i></i></div><small style="letter-spacing:.18em;color:#c9b8d0;font-size:10px">CREATIVE IDENTITY INITIALIZING</small></div></div>
-<nav><a class="logo" href="#top">JY<span>✳</span></a><div class="navlinks"><a href="#about">关于我</a><a href="#projects">项目</a><a href="#tools">AI 工具</a><a href="#contact">联系</a></div><a class="contact" href="mailto:2724760294@qq.com">一起聊聊 ↗</a></nav>
+<nav><a class="logo" href="#top">JY<span>✳</span></a><div class="navlinks"><a href="#world">小小世界</a><a href="#projects">项目</a><a href="#about">关于我</a><a href="#tools">AI 工具</a><a href="#contact">联系</a></div><a class="contact" href="mailto:2724760294@qq.com">一起聊聊 ↗</a></nav>
 <main id="top">
 <section class="hero" id="home"><div class="copy"><div class="eyebrow">AI CONTENT CREATOR · JIAYI'S SPACE</div><h1>NOT YOUR <span>AVERAGE GIRL.</span></h1><div class="hand">用 AI 创造内容，也创造更多可能 ♡</div><p class="role">AI 内容运营｜短视频运营｜广告投放｜品牌营销</p><p class="desc">把创意变成流量，把内容变成生意。<br>这里不只是我的作品集，也是我的实验室、灵感簿和持续更新中的数字人格。</p><div class="actions"><a class="btn primary" href="#projects">看看我做的事 ↗</a><a class="btn" href="#about">认识我一点</a></div><div class="tags"><span>CREATE</span><span>EXPERIMENT</span><span>MAKE IT HAPPEN</span></div><div class="metrics"><div class="metric"><strong>10.5万+</strong><small>全网粉丝*</small></div><div class="metric"><strong>20,847+</strong><small>累计订单*</small></div><div class="metric"><strong>ROI 2.20</strong><small>投放项目数据*</small></div></div></div>
 <div class="stage" id="stage"><div class="orbit"></div><div class="portrait-wrap"><img class="portrait" src="assets/jiayi-portrait.svg" alt="嘉仪的个人形象"><div class="scan"></div></div><div class="sticker tools"><small>MY PLAYGROUND</small><strong>AI TOOLS ♡</strong><div class="icons"><i>✳</i><i>◈</i><i>Ps</i><i>▶</i></div></div><div class="sticker note">good ideas<br>better content ✧</div><div class="sticker project"><small>SELECTED PROJECT ↗</small><strong>Turning ideas<br>into real growth.</strong><div class="bar"></div></div></div></section>
+<section class="world reveal" id="world" aria-labelledby="world-title">
+  <div class="world-orbit" aria-hidden="true"></div>
+  <div class="world-inner">
+    <div class="world-index">02 / WELCOME TO MY LITTLE WORLD</div>
+    <h2 id="world-title">欢迎来到我的<span>小小世界</span></h2>
+    <p>这里装着我的灵感、实验、作品和正在发生的变化。<br>不必先定义边界，先把想法做出来。</p>
+  </div>
+</section>
 <section class="works reveal" id="projects">
 <div class="works-topline"><span>JIAYI.exe / SELECTED WORKS</span><span>03 / 04 — CREATIVE × COMMERCIAL</span></div>
 <div class="sectionhead"><div><div class="kicker">03 / SELECTED WORKS</div><h2>不止于灵感。<br><em>让内容产生自己的引力。</em></h2></div><p>我关注的不只是画面如何生成，更是内容如何吸引注意、讲述故事，并创造真实价值。</p></div>
@@ -218,7 +243,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 <button class="work-card w07" data-work="person" aria-label="查看真实人物内容"><span class="work-art"><img class="work-real-image" src="assets/works/work-07.webp" alt="已提供的person作品原始画面" loading="lazy" decoding="async" onload="this.closest('.work-card').classList.add('has-real-art')" onerror="this.closest('.work-card').classList.add('media-unavailable');this.remove()"></span><span class="work-top"><span><span class="work-number">07</span><span class="work-type">REAL PERSON</span></span><span class="work-pill">商业内容</span></span><span class="work-bottom"><h3>真实人物，真实表达</h3><p>关注人物表现、开场钩子与内容节奏。</p><span class="work-foot"><span>人物钩子</span><span>↗</span></span></span></button>
 <button class="work-card w08" data-work="growth" aria-label="查看海外电商增长案例"><span class="work-art"><span class="work-actual-data" aria-hidden="true"><span class="data-total"><small>JAN–FEB 2026 · GROSS REVENUE</small><strong>$311,080.82</strong><small>46,554 SKU orders · 两个月合计</small></span><span class="data-month"><small>JAN 2026 · ROI 2.20</small><strong>$158,214.79</strong><small>23,449 orders</small></span><span class="data-month"><small>FEB 2026 · ROI 2.15</small><strong>$152,866.03</strong><small>23,105 orders</small></span></span></span><span class="work-placeholder">真实数据 · 点击查看后台原图</span><span class="work-top"><span><span class="work-number">08</span><span class="work-type">GROWTH CASE</span></span><span class="work-pill">商业成果</span></span><span class="work-bottom"><h3>让内容创造价值。</h3><p>海外电商增长案例 · 从内容到投放与商业转化。</p><span class="work-foot"><span>$311,080.82 Gross revenue*　·　46,554 SKU orders*</span><span>↗</span></span></span></button>
 </div>
-<p class="works-note">作品均采用已提供的真实原片画面或原始项目海报，视频成片尚未托管到网页；点击卡片可查看项目画面与细节。08 使用 2026 年 1–2 月 GLIT STORE VN 原始月度后台截图；Gross revenue / SKU orders 为两个月的算术合计，非广告归因 GMV，不将月度 ROI 合并。</p>
+<p class="works-note">作品卡片与详情图库复用仓库内的项目素材。当前仓库尚未托管独立作品视频原片，因此详情弹窗展示真实封面与原始截图，不会伪装成可播放视频。08 使用 2026 年 1–2 月 GLIT STORE VN 原始月度后台截图；Gross revenue / SKU orders 为两个月的算术合计，非广告归因 GMV，不将月度 ROI 合并。</p>
 </section>
 <section class="about reveal" id="about"><div><div class="kicker">02 / ABOUT THIS HUMAN</div><h2>MORE THAN<br>A JOB TITLE.</h2></div><div><p>我是嘉仪，一个喜欢把想法做出来的人。内容、视觉、增长和 AI 对我来说不是彼此分开的标签，而是可以组合起来解决问题的一套工具。</p><p>我喜欢尝试、拆解、快速验证，再把有效的方法沉淀成下一次可以复用的流程。这里会持续更新我的项目、灵感和正在学习的新东西。</p><div class="chips"><span>AI 内容生产</span><span>短视频运营</span><span>广告投放</span><span>内容策略</span><span>创意实验</span><span>商业化</span></div></div></section>
 <section class="more reveal" id="tools"><div class="sectionhead"><div><div class="kicker">03 / MY CREATIVE PLAYGROUND</div><h2>TOOLS, NOT MAGIC.</h2></div><p>工具只是起点。真正重要的是怎么组合、怎么判断，以及最后做出了什么。</p></div><div class="cards"><button class="card" data-modal="ai"><small>GENERATE</small><h3>AI 创意与视觉</h3><p>概念探索、视觉方向、素材生成与创意迭代。</p><span class="arrow">↗</span></button><button class="card" data-modal="content"><small>PRODUCE</small><h3>内容生产</h3><p>选题、脚本、剪辑、包装、发布与复盘。</p><span class="arrow">↗</span></button><button class="card" data-modal="growth"><small>OPTIMIZE</small><h3>增长与分析</h3><p>测试素材表现，观察 CTR、ROI 与转化路径。</p><span class="arrow">↗</span></button></div></section>
