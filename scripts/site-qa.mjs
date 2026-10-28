@@ -5,51 +5,66 @@ import { mkdirSync } from 'node:fs';
 mkdirSync('qa-results', { recursive:true });
 const browser = await chromium.launch({ headless:true });
 const errors = [];
+
 async function exercise(name, viewport) {
- const page = await browser.newPage({ viewport, deviceScaleFactor:1 });
- page.on('pageerror', e=>errors.push(name + ': ' + e.message));
- await page.goto('file://' + resolve('index.html'), {waitUntil:'load'});
- await page.waitForTimeout(1250);
- const cards=page.locator('.works-grid .work-card');
- if(await cards.count()!==8)throw Error(name+': expected 8 cards');
- if(await page.locator('.work-card .work-real-image').count()!==7)throw Error(name+': expected 7 authentic still images');
- const broken=await page.locator('.work-card .work-real-image').evaluateAll(imgs=>imgs.filter(im=>!im.complete||im.naturalWidth===0).map(im=>im.src));
- if(broken.length)throw Error(name+': missing cover(s): '+broken.join(', '));
- const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
- if(overflow>3)throw Error(name+': horizontal overflow '+overflow);
- await page.locator('#projects').scrollIntoViewIfNeeded();
- await page.screenshot({path:'qa-results/'+name+'-works.png', fullPage:false});
- for(let i=0;i<8;i++){
-  await cards.nth(i).click();
-  const dialog=page.locator('#modal');
-  await dialog.waitFor({state:'visible'});
-  const n=await page.locator('#workGallery .work-gallery-item').count();
-  if(n<1)throw Error(name+': no original gallery for project '+(i+1));
-  const displayed=page.locator('#modalMedia .work-modal-cover');
-  if(await displayed.count()!==1)throw Error(name+': cover missing in modal for '+(i+1));
-  await displayed.evaluate(im=>im.decode());
-  if(i===7&&n!==2)throw Error(name+': growth should display Jan/Feb screenshots');
-  if(i===7){
-   await page.locator('#workGallery .work-gallery-item').last().click();
-   await displayed.evaluate(im=>im.decode());
+  const page = await browser.newPage({ viewport, deviceScaleFactor:1 });
+  page.on('pageerror', e => errors.push(name + ': ' + e.message));
+  await page.goto('file://' + resolve('index.html'), { waitUntil:'load' });
+  await page.waitForTimeout(900);
+
+  const section = page.locator('#projects.selected-works');
+  if (await section.count() !== 1) throw Error(name + ': selected projects section missing or duplicated');
+  if (!(await page.locator('#creative-universe').evaluate(a => a.compareDocumentPosition(document.querySelector('#projects')) & Node.DOCUMENT_POSITION_FOLLOWING))) {
+    throw Error(name + ': portfolio wall must follow Creative Universe');
   }
-  if([0,1,4,6].includes(i)){
-   const videoButton=page.locator('#workGallery .work-gallery-item').filter({hasText:'原始视频'});
-   if(await videoButton.count()!==1)throw Error(name+': expected original video control for project '+(i+1));
-   await videoButton.click();
-   const video=page.locator('#workVideoPanel video');
-   if(await video.count()!==1)throw Error(name+': video player missing for project '+(i+1));
-   const duration=await video.evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve(v.duration);v.addEventListener('loadedmetadata',()=>resolve(v.duration),{once:true});v.addEventListener('error',()=>reject(v.error?.message||'video error'),{once:true})}));
-   if(!(duration>0))throw Error(name+': invalid duration for project '+(i+1));
+  if (!(await page.locator('#selectedWorksTitle').innerText()).includes('把创意')) throw Error(name + ': new section heading missing');
+
+  const cards = page.locator('.selected-works__grid .work-tile');
+  if (await cards.count() !== 8) throw Error(name + ': expected 8 portfolio cards');
+  if (await page.locator('.work-tile--wide').count() !== 2) throw Error(name + ': expected wide cards 01 and 08');
+  if (await page.locator('.work-tile--tall').count() !== 6) throw Error(name + ': expected portrait cards 02–07');
+
+  const broken = await page.locator('.selected-works__grid .work-tile__image').evaluateAll(imgs =>
+    imgs.filter(im => !im.complete || im.naturalWidth === 0).map(im => im.getAttribute('src'))
+  );
+  if (broken.length) throw Error(name + ': missing cover(s): ' + broken.join(', '));
+
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+  if (overflow > 3) throw Error(name + ': horizontal overflow ' + overflow);
+  await section.scrollIntoViewIfNeeded();
+  await page.screenshot({ path:'qa-results/' + name + '-works.png', fullPage:false });
+
+  for (let i = 0; i < 8; i++) {
+    await cards.nth(i).click();
+    const dialog = page.locator('#worksDialog');
+    await dialog.waitFor({ state:'visible' });
+    const media = page.locator('#worksDialogMedia');
+    if (await media.locator('img,video').count() !== 1) throw Error(name + ': modal media missing for card ' + (i + 1));
+    if ([0,1,4,6].includes(i)) {
+      const video = media.locator('video');
+      if (await video.count() !== 1) throw Error(name + ': expected video player for card ' + (i + 1));
+      const duration = await video.evaluate(v => new Promise((resolve, reject) => {
+        if (v.readyState >= 1 && Number.isFinite(v.duration)) return resolve(v.duration);
+        v.addEventListener('loadedmetadata', () => resolve(v.duration), { once:true });
+        v.addEventListener('error', () => reject(new Error('video failed to load: ' + v.currentSrc)), { once:true });
+      }));
+      if (!(duration > 0)) throw Error(name + ': invalid video duration for card ' + (i + 1));
+    } else {
+      const image = media.locator('img');
+      if (await image.count() !== 1) throw Error(name + ': expected still cover for card ' + (i + 1));
+      await image.evaluate(img => img.decode());
+    }
+    await page.keyboard.press('Escape');
+    if (await dialog.isVisible()) throw Error(name + ': Escape did not close modal');
   }
-  await page.keyboard.press('Escape');
-  if(await dialog.isVisible())throw Error(name+': Escape did not close modal');
- }
- await page.close();
+  await page.close();
 }
-try{
- await exercise('desktop', {width:1440,height:900});
- await exercise('mobile',{width:390,height:844});
- if(errors.length)throw Error('Uncaught browser errors:\n'+errors.join('\n'));
- console.log('PASS: 8 projects, 7 cover images, 4 original video players, gallery modals, dashboard snapshots, Esc, responsive overflow, no JS errors');
-}finally{await browser.close();}
+
+try {
+  await exercise('desktop', { width:1440, height:900 });
+  await exercise('mobile', { width:390, height:844 });
+  if (errors.length) throw Error('Uncaught browser errors:\n' + errors.join('\n'));
+  console.log('PASS: new portfolio wall follows Creative Universe; 8 cards (01/08 wide, 02–07 portrait); cover assets, 4 video players, modal close, responsive overflow, no JS errors');
+} finally {
+  await browser.close();
+}
