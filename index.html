@@ -1199,7 +1199,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 <div class="boot" id="boot"><div><b>JIAYI<span>.exe</span></b><div class="load"><i></i></div><small style="letter-spacing:.18em;color:#c9b8d0;font-size:10px">CREATIVE IDENTITY INITIALIZING</small></div></div>
 <nav><a class="logo" href="#top">JY<span>✳</span></a><div class="navlinks"><a href="#about">关于我</a><a href="#projects">项目</a><a href="#tools">AI 工具</a><a href="#contact">联系</a></div><a class="contact" href="mailto:2724760294@qq.com">一起聊聊 ↗</a></nav>
 <main id="top">
-<section class="hero" id="home"><video id="heroVideo" class="hero-video" autoplay muted playsinline preload="metadata" poster="assets/v18/c1e1581015ca.jpg" aria-hidden="true"><source src="assets/v18/bb1e8bffc066.mp4" type="video/mp4"></video><div class="hero-glint" aria-hidden="true"></div><div class="hero-video-shade"></div><div class="hero-video-label">SCROLL TO MOVE / CLICK TO PLAY</div><div class="copy"><div class="eyebrow">AI CONTENT CREATOR · JIAYI'S SPACE</div><h1>NOT YOUR <span>AVERAGE GIRL.</span></h1><div class="hand">用 AI 创造内容，也创造更多可能 ♡</div><p class="role">AI 内容运营｜短视频运营｜广告投放｜品牌营销</p><p class="desc">把创意变成流量，把内容变成生意。<br>这里不只是我的作品集，也是我的实验室、灵感簿和持续更新中的数字人格。</p><div class="actions"><a class="btn primary" href="#projects">看看我做的事 ↗</a><a class="btn" href="#about">认识我一点</a><a class="btn" href="#world">进入嘉仪世界 ↗</a></div><div class="tags"><span>CREATE</span><span>EXPERIMENT</span><span>MAKE IT HAPPEN</span></div><div class="metrics"><div class="metric"><strong>10.5万+</strong><small>全网粉丝*</small></div><div class="metric"><strong>20,847+</strong><small>累计订单*</small></div><div class="metric"><strong>ROI 2.20</strong><small>投放项目数据*</small></div></div></div>
+<section class="hero" id="home"><video id="heroVideo" class="hero-video" autoplay muted playsinline preload="metadata" poster="assets/v18/c1e1581015ca.jpg" aria-hidden="true"><source src="assets/v18/bb1e8bffc066.mp4" type="video/mp4"></video><div class="hero-glint" aria-hidden="true"></div><div class="hero-video-shade"></div><div class="hero-video-label">SCROLL TO MOVE / CLICK TO PLAY</div><div class="jiayi-character-collage" aria-hidden="true"><span class="jiayi-collage-stroke stroke-one"></span><span class="jiayi-collage-stroke stroke-two"></span><img class="jiayi-character character-knit" src="assets/characters/jiayi-black-knit-seated.png" alt=""><img class="jiayi-character character-punk" src="assets/characters/jiayi-punk-street-seated.png" alt=""><img class="jiayi-character character-street" src="assets/characters/jiayi-black-street-standing.png" alt=""><img class="jiayi-character character-floral" src="assets/characters/jiayi-pink-floral-crouch.png" alt=""><img class="jiayi-character character-plaid" src="assets/characters/jiayi-red-plaid-fullbody.png" alt=""></div><div class="copy"><div class="eyebrow">AI CONTENT CREATOR · JIAYI'S SPACE</div><h1>NOT YOUR <span>AVERAGE GIRL.</span></h1><div class="hand">用 AI 创造内容，也创造更多可能 ♡</div><p class="role">AI 内容运营｜短视频运营｜广告投放｜品牌营销</p><p class="desc">把创意变成流量，把内容变成生意。<br>这里不只是我的作品集，也是我的实验室、灵感簿和持续更新中的数字人格。</p><div class="actions"><a class="btn primary" href="#projects">看看我做的事 ↗</a><a class="btn" href="#about">认识我一点</a><a class="btn" href="#world">进入嘉仪世界 ↗</a></div><div class="tags"><span>CREATE</span><span>EXPERIMENT</span><span>MAKE IT HAPPEN</span></div><div class="metrics"><div class="metric"><strong>10.5万+</strong><small>全网粉丝*</small></div><div class="metric"><strong>20,847+</strong><small>累计订单*</small></div><div class="metric"><strong>ROI 2.20</strong><small>投放项目数据*</small></div></div></div>
 <div class="stage" id="stage"><div class="orbit"></div><div class="portrait-wrap"><img class="portrait" src="assets/v18/e6ff7243b751.png" alt="嘉仪的时尚人物形象" fetchpriority="high"> alt="嘉仪的个人形象"><div class="scan"></div></div><div class="sticker tools"><small>MY PLAYGROUND</small><strong>AI TOOLS ♡</strong><div class="icons"><i>✳</i><i>◈</i><i>Ps</i><i>▶</i></div></div><div class="sticker note">good ideas<br>better content ✧</div><div class="sticker project"><small>SELECTED PROJECT ↗</small><strong>Turning ideas<br>into real growth.</strong><div class="bar"></div></div></div>
 </section>
 <div class="hero-bridge" aria-hidden="true">
@@ -1604,6 +1604,41 @@ main{position:relative!important;isolation:isolate!important}
 }
 @media(prefers-reduced-motion:reduce){#home #heroVideo,#home .hero-video{transform:none!important}}
 
+</style>
+<style id="jiayi-character-collage-composition">
+/* Multi-look hero collage: transparent source PNGs, layered above the video and below the copy. */
+#home .jiayi-character-collage{position:absolute;z-index:3;right:0;bottom:0;width:min(50vw,700px);height:100%;pointer-events:none;overflow:hidden;isolation:isolate}
+#home .jiayi-character{position:absolute;display:block;width:auto;height:auto;max-width:none;object-fit:contain;filter:drop-shadow(0 16px 22px rgba(39,8,31,.34));transform-origin:center bottom;will-change:transform}
+#home .character-knit{z-index:2;left:-15%;bottom:-7%;width:64%;animation:jiayi-drift-a 8s ease-in-out infinite}
+#home .character-punk{z-index:4;right:-13%;bottom:-7%;width:76%;animation:jiayi-drift-b 9.5s -2s ease-in-out infinite}
+#home .character-street{z-index:3;left:16%;bottom:-5%;width:52%;animation:jiayi-drift-c 8.8s -1.4s ease-in-out infinite}
+#home .character-floral{z-index:5;left:0;bottom:-17%;width:63%;animation:jiayi-drift-b 10.5s -4s ease-in-out infinite}
+#home .character-plaid{z-index:6;right:0;bottom:-10%;width:38%;animation:jiayi-drift-a 7.6s -2.6s ease-in-out infinite}
+#home .jiayi-collage-stroke{position:absolute;z-index:1;display:block;border:1px solid rgba(255,142,215,.74);border-radius:49% 43% 56% 38%;box-shadow:0 0 0 11px rgba(255,232,248,.13),0 0 48px rgba(236,85,188,.22)}
+#home .stroke-one{width:43%;height:54%;right:13%;top:11%;transform:rotate(-18deg)}
+#home .stroke-two{width:34%;height:42%;left:7%;bottom:11%;border-color:rgba(255,255,255,.74);transform:rotate(19deg)}
+@keyframes jiayi-drift-a{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(0,-13px,0) rotate(1deg)}}
+@keyframes jiayi-drift-b{0%,100%{transform:translate3d(0,0,0) rotate(1deg)}50%{transform:translate3d(0,-10px,0) rotate(-1deg)}}
+@keyframes jiayi-drift-c{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(2px,-15px,0) scale(1.015)}}
+@media(max-width:850px){
+ #home .jiayi-character-collage{width:100%;height:56%;right:0;bottom:0;opacity:.92}
+ #home .character-knit{left:0;bottom:-17%;width:55%}
+ #home .character-punk{right:-7%;bottom:-22%;width:60%}
+ #home .character-street{left:31%;bottom:-11%;width:38%}
+ #home .character-floral{display:none}
+ #home .character-plaid{right:12%;bottom:-16%;width:27%}
+ #home .stroke-one{width:30%;height:68%;right:27%;top:8%}
+ #home .stroke-two{display:none}
+}
+@media(max-width:560px){
+ #home .jiayi-character-collage{height:49%;opacity:.8}
+ #home .character-knit{left:-5%;width:65%}
+ #home .character-punk{right:-18%;width:70%}
+ #home .character-street{left:34%;width:42%}
+ #home .character-plaid{display:none}
+ #home .stroke-one{right:31%;width:29%}
+}
+@media(prefers-reduced-motion:reduce){#home .jiayi-character{animation:none!important}}
 </style>
 <script id="jiayi-v7-video-loop">
 
