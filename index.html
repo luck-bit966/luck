@@ -1677,6 +1677,9 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 <script id="jiayi-world-reference-nav">
 (()=>{const world=document.getElementById('world');if(!world||!('IntersectionObserver'in window))return;const observer=new IntersectionObserver(entries=>{document.body.classList.toggle('world-reference-active',entries.some(entry=>entry.isIntersecting));},{threshold:.45});observer.observe(world)})();
 </script>
+<script id="jiayi-remove-hero-collage-and-use-lace-portrait">
+(()=>{const collage=document.querySelector('#home .jiayi-character-collage');if(collage)collage.remove();const portrait=document.querySelector('#world .world-portrait-img');if(portrait){portrait.src='assets/characters/jiayi-lace-lookback.png';portrait.alt='嘉仪的白蕾丝回眸人物形象';}})();
+</script>
 <script id="jiayi-v7-video-loop">
 
 /* V7: reliable looping without switching the hero into its old duplicate-portrait state. */
