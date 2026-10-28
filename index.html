@@ -1297,7 +1297,9 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
           <span>LOOK / 03</span>
         </div>
       </div>
-      <img class="identity-portrait" src="assets/v18/e6ff7243b751.png" alt="嘉仪的个人形象主视觉" loading="lazy" />
+      <img class="identity-portrait" src="assets/characters/jiayi-street-headphones.png" alt="嘉仪的耳机街头造型主视觉" loading="lazy" />
+      <canvas class="identity-outfit-erase" aria-label="在人物上移动鼠标，擦除白蕾丝造型并切换为耳机街头造型"></canvas>
+      <span class="identity-outfit-hint" aria-hidden="true">ERASE TO CHANGE LOOK ✦</span>
       <div class="identity-floating-card identity-floating-card-one">
         <img src="assets/v18/b9bc812e020f.png" alt="嘉仪人物快照卡片一" loading="lazy" />
         <div class="identity-floating-card-label"><span>JIAYI / SNAPSHOT 01</span><b>Ideas in motion ✳</b></div>
@@ -1679,6 +1681,17 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 </script>
 <script id="jiayi-remove-hero-collage-and-use-lace-portrait">
 (()=>{const collage=document.querySelector('#home .jiayi-character-collage');if(collage)collage.remove();const portrait=document.querySelector('#world .world-portrait-img');if(portrait){portrait.src='assets/characters/jiayi-lace-lookback.png';portrait.alt='嘉仪的白蕾丝回眸人物形象';}})();
+</script>
+<style id="jiayi-identity-outfit-erase">
+#identity .identity-portrait-panel{cursor:crosshair}
+#identity .identity-outfit-erase{position:absolute;z-index:3;inset:0;display:block;width:100%;height:100%;touch-action:none}
+#identity .identity-outfit-hint{position:absolute;z-index:6;left:12%;bottom:8%;padding:7px 9px;border:1px solid rgba(231,83,207,.58);background:rgba(255,249,255,.72);color:#a62e91;font:700 8px/1 Inter,Arial,sans-serif;letter-spacing:.15em;pointer-events:none;transition:opacity .3s ease}
+#identity .identity-portrait-panel.is-erasing .identity-outfit-hint{opacity:0}
+@media(max-width:560px){#identity .identity-outfit-hint{left:11%;bottom:11%;font-size:6px;padding:6px}}
+@media(prefers-reduced-motion:reduce){#identity .identity-outfit-erase,#identity .identity-outfit-hint{display:none!important}}
+</style>
+<script id="jiayi-identity-outfit-erase-script">
+(()=>{const panel=document.querySelector('#identity .identity-portrait-panel');const canvas=panel?.querySelector('.identity-outfit-erase');if(!panel||!canvas)return;const under=panel.querySelector('.identity-portrait');const top=new Image();top.src='assets/characters/jiayi-lace-lookback.png';top.alt='';const sources=['assets/characters/jiayi-punk-crouch.png','assets/characters/jiayi-lace-lookback.png','assets/characters/jiayi-street-headphones.png'];panel.querySelectorAll('.identity-film-frame img').forEach((img,i)=>{img.src=sources[i];});panel.querySelectorAll('.identity-floating-card img').forEach((img,i)=>{img.src=sources[i===0?0:2];});const study=panel.querySelector('.yami-turnaround-card img');if(study){study.src=sources[1];study.alt='嘉仪白蕾丝造型人物档案';}const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced)return;const ctx=canvas.getContext('2d');let ready=false;function draw(){const rect=canvas.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);canvas.width=Math.max(1,Math.round(rect.width*d));canvas.height=Math.max(1,Math.round(rect.height*d));ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,rect.width,rect.height);const maxH=Math.min(rect.height,690);const ratio=Math.min(rect.width/top.naturalWidth,maxH/top.naturalHeight);const w=top.naturalWidth*ratio,h=top.naturalHeight*ratio,x=(rect.width-w)/2,y=rect.height-h;ctx.drawImage(top,x,y,w,h);ready=true;}top.addEventListener('load',draw,{once:true});if(top.complete)draw();new ResizeObserver(draw).observe(panel);function erase(event){if(!ready)return;const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top,brush=Math.max(58,Math.min(112,r.width*.13));const g=ctx.createRadialGradient(x,y,brush*.22,x,y,brush);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.92)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.save();ctx.globalCompositeOperation='destination-out';ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,brush,0,Math.PI*2);ctx.fill();ctx.restore();panel.classList.add('is-erasing');}canvas.addEventListener('pointerdown',event=>{canvas.setPointerCapture(event.pointerId);erase(event)});canvas.addEventListener('pointermove',event=>{if(event.buttons||event.pressure>0)erase(event)});})();
 </script>
 <script id="jiayi-v7-video-loop">
 
