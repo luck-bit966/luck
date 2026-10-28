@@ -38,7 +38,7 @@ The following original MP4 files are now stored in the repository and connected 
 | Website project | Hosted asset | Source file | Format |
 |---|---|---|---|
 | 01 / AI Story | `assets/videos/ai-story.mp4` | `8.mp4` | 720×1280, H.264/AAC |
-| 02 / AI Visual | `assets/videos/ai-visual.mp4` | `7-副本.mp4` | 720×1280, H.264/AAC |
+| 02 / AI Visual | `assets/videos/ai-visual-web.mp4` | `7-副本.mp4` | 720×1280, H.264/AAC · 网页播放优化版 |
 | 05 / Product TVC | `assets/videos/product-tvc.mp4` | `11.mp4` | 2560×1440, H.264/AAC |
 | 07 / Real Person | `assets/videos/real-person.mp4` | `真实感人物1.mp4` | 720×1280, H.264/AAC |
 
