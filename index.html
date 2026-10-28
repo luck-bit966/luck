@@ -1260,7 +1260,35 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
       </div>
       <div class="impact-account-note">AI 新账号曾在 1 周内冷启动至 1 万粉</div>
     </div>
-  </section>
+</section>
+
+<section class="achievement-track" id="achievements" aria-labelledby="achievement-title">
+  <div class="achievement-scene" aria-hidden="true">
+    <div class="achievement-vignette"></div>
+    <div class="achievement-axis"><i></i><b>RESULTS<br>IN MOTION</b><i></i></div>
+    <div class="achievement-certificate certificate-a"><span>01 / PERFORMANCE</span><strong>$812,946</strong><small>TikTok 累计 GMV</small></div>
+    <div class="achievement-certificate certificate-b"><span>02 / COMMUNITY</span><strong>10.5万+</strong><small>全网粉丝增长</small></div>
+    <div class="achievement-certificate certificate-c"><span>03 / RECOGNITION</span><strong>11 项</strong><small>省级荣誉</small></div>
+  </div>
+  <div class="achievement-content">
+    <header class="achievement-intro" id="achievement-title"><span>WHY RESULTS MATTER</span><h2><b>让内容</b><b>产生增长，</b><b>让增长</b><b>看得见。</b></h2><p>从内容生产、账号增长到商业投放，每一次结果都能被复盘、被验证。</p></header>
+    <div class="achievement-features" aria-label="嘉仪的核心成效">
+      <article class="achievement-feature feature-left feature-one"><span class="achievement-icon">◎</span><h3>商业结果<br>真实落地</h3><p>负责 TikTok 短视频与广告投放，累计实现 <b>$812,946 GMV</b>，整体 ROI 2.20。</p></article>
+      <article class="achievement-feature feature-right feature-two"><span class="achievement-icon">▦</span><h3>增长不是<br>偶然发生</h3><p>从 0 到 <b>10.5万+ 全网粉丝</b>，完成 20,847+ 累计订单与 8000+ 私域用户沉淀。</p></article>
+      <article class="achievement-feature feature-left feature-three"><span class="achievement-icon">◌</span><h3>素材有量<br>也有爆发</h3><p>完成 <b>500+ 短视频素材测试</b>，产出 50+ 条百万级播放素材，单条最高播放 230 万+。</p></article>
+      <article class="achievement-feature feature-right feature-four"><span class="achievement-icon">¥</span><h3>每一笔投放<br>清晰可见</h3><p>广告消耗 $369,521，围绕素材、产品与转化持续迭代，把内容变成可衡量的回报。</p></article>
+      <article class="achievement-feature feature-centre feature-five"><span class="achievement-icon">»</span><h3>荣誉与执行<br>一起向前</h3><p>国家级创新创业赛事一等奖；<b>省级 11 项、校级 50+ 项</b>荣誉与实践成果。</p></article>
+    </div>
+  </div>
+</section>
+<section class="achievement-proof" aria-labelledby="proof-title">
+  <div class="achievement-proof-head"><h2 id="proof-title">成果不是一行数字。<em>是持续交付的能力。</em></h2><p>从商业项目到个人账号，每一段经历都保留了内容、增长和结果之间的完整链路。</p></div>
+  <div class="achievement-proof-list">
+    <article><div><b>商业化运营</b><span>TikTok / 短视频与广告投放</span></div><p>覆盖选题、脚本、制作、发布与投放优化；累计 20,847+ 订单、$812,946 GMV，ROI 2.20。</p></article>
+    <article><div><b>内容与用户增长</b><span>抖音 / 小红书 / 快手</span></div><p>全网粉丝 10.5万+，私域用户 8000+；完成从内容生产、用户沉淀到付费转化的运营链路。</p></article>
+    <article><div><b>荣誉档案</b><span>创新创业 / 校园实践</span></div><p>国家级创新创业赛事一等奖，累计省级荣誉 11 项、校级荣誉 50+ 项。</p></article>
+  </div>
+</section>
 
 <section class="identity-section" id="identity" aria-labelledby="identity-title">
   <div class="identity-dark-head">
@@ -1683,6 +1711,19 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 (()=>{const collage=document.querySelector('#home .jiayi-character-collage');if(collage)collage.remove();const portrait=document.querySelector('#world .world-portrait-img');if(portrait){portrait.src='assets/characters/jiayi-lace-lookback.png';portrait.alt='嘉仪的白蕾丝回眸人物形象';}})();
 </script>
 <style id="jiayi-identity-outfit-erase">
+#achievements.achievement-track{position:relative;height:390vh;background:#0a0b0c;color:#f7f5ef;isolation:isolate}
+.achievement-scene{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 52%,#561642 0%,#1a101b 34%,#0a0b0c 72%)}
+.achievement-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),transparent 25%,transparent 74%,rgba(0,0,0,.42)),repeating-linear-gradient(90deg,transparent 0 7.7vw,rgba(255,255,255,.025) 7.7vw 7.8vw);pointer-events:none}
+.achievement-axis{position:absolute;left:50%;top:50%;width:min(68vw,820px);height:min(78vh,750px);transform:translate(-50%,-50%) scale(calc(1 - var(--achievement-p,0)*.2));border:1px solid rgba(246,99,205,.32);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8vh 0;opacity:calc(1 - var(--achievement-cloud,0)*.92);transition:opacity .08s linear}
+.achievement-axis:before,.achievement-axis:after{content:"";position:absolute;inset:11%;border:1px solid rgba(255,255,255,.08);border-radius:50%;transform:rotate(-18deg)}
+.achievement-axis i{position:relative;z-index:1;width:1px;height:19vh;background:linear-gradient(#f7f5ef,transparent)}.achievement-axis i:last-child{background:linear-gradient(transparent,#f7f5ef)}
+.achievement-axis b{position:relative;z-index:2;text-align:center;font:800 clamp(22px,3.1vw,48px)/.9 'Exo 2',Arial,sans-serif;letter-spacing:-.06em;text-shadow:0 12px 32px #0008}
+.achievement-certificate{position:absolute;z-index:3;width:clamp(140px,18vw,246px);padding:18px;border:1px solid rgba(247,245,239,.36);background:linear-gradient(140deg,rgba(255,255,255,.18),rgba(255,255,255,.02));box-shadow:0 18px 55px #0007;backdrop-filter:blur(8px);opacity:calc(.95 - var(--achievement-cloud,0)*.95);transition:opacity .08s linear,transform .08s linear}
+.achievement-certificate span,.achievement-certificate small{display:block;font:700 8px/1.4 'Public Sans',Arial,sans-serif;letter-spacing:.16em}.achievement-certificate strong{display:block;margin:13px 0 7px;font:800 clamp(26px,3.3vw,48px)/.9 'Exo 2',Arial,sans-serif;color:#f16bd4}.certificate-a{left:9vw;top:17%;transform:rotate(-8deg) translateY(calc(var(--achievement-p,0)*-42px))}.certificate-b{right:10vw;top:41%;transform:rotate(7deg) translateY(calc(var(--achievement-p,0)*34px))}.certificate-c{left:14vw;bottom:14%;transform:rotate(5deg) translateY(calc(var(--achievement-p,0)*-28px))}
+.achievement-content{position:absolute;inset:0;pointer-events:none}.achievement-intro{position:absolute;top:100vh;left:50%;width:min(100% - 52px,1100px);transform:translateX(-50%);text-align:center}.achievement-intro>span{font:700 9px/1 'Public Sans',Arial,sans-serif;letter-spacing:.3em;color:#f7a8df}.achievement-intro h2{margin:18px 0 16px;font:800 clamp(48px,6.5vw,92px)/.84 'Exo 2',Arial,sans-serif;letter-spacing:-.07em;text-shadow:0 12px 32px #0008}.achievement-intro h2 b{display:block}.achievement-intro h2 b:nth-child(2),.achievement-intro h2 b:nth-child(3){color:#f36bd4}.achievement-intro p{margin:auto;max-width:480px;color:rgba(255,255,255,.88);font:400 14px/1.7 'Public Sans',Arial,sans-serif}
+.achievement-features{position:absolute;inset:0}.achievement-feature{position:absolute;width:min(300px,31vw);pointer-events:auto;text-shadow:0 8px 24px #0009}.achievement-feature h3{margin:0 0 12px;font:800 clamp(18px,1.55vw,25px)/.98 'Public Sans',Arial,sans-serif;text-transform:uppercase}.achievement-feature p{margin:0;color:rgba(255,255,255,.88);font:400 12.3px/1.45 'Public Sans',Arial,sans-serif}.achievement-feature p b{color:#fff}.achievement-icon{display:block;margin-bottom:24px;color:#f9f9f9;font:800 34px/1 'Exo 2',Arial,sans-serif}.feature-left{text-align:right;right:calc(50% + 78px)}.feature-right{text-align:left;left:calc(50% + 78px)}.feature-one,.feature-two{top:187.5vh}.feature-three,.feature-four{top:219.9vh}.feature-three{right:calc(50% + 88px)}.feature-four{left:calc(50% + 88px)}.feature-five{top:257.9vh;left:50%;width:min(370px,82vw);transform:translateX(-50%);text-align:center}.feature-five .achievement-icon{font-size:42px}
+.achievement-proof{position:relative;z-index:2;margin-top:-34vh;padding:38vh max(64px,calc((100vw - 1120px)/2)) 140px;background:linear-gradient(180deg,transparent 0,#e2dedd 34vh);color:#141516}.achievement-proof-head{display:grid;grid-template-columns:1fr 300px;gap:56px;padding-bottom:42px;border-bottom:1px solid #14151629}.achievement-proof h2{margin:0;font:800 clamp(34px,4.4vw,60px)/1 'Exo 2',Arial,sans-serif;letter-spacing:-.06em}.achievement-proof h2 em{display:block;color:#8f8b8a;font-style:normal}.achievement-proof-head p{margin:0;align-self:end;color:rgba(20,21,22,.7);font:400 13px/1.65 'Public Sans',Arial,sans-serif}.achievement-proof-list article{display:grid;grid-template-columns:260px 1fr;gap:48px;padding:44px 0;border-bottom:1px solid #14151629}.achievement-proof-list b{display:block;font:700 13px/1.3 'Public Sans',Arial,sans-serif;text-transform:uppercase}.achievement-proof-list span{display:block;margin-top:6px;color:rgba(20,21,22,.6);font:400 12px/1.4 'Public Sans',Arial,sans-serif}.achievement-proof-list p{margin:0;max-width:680px;font:400 clamp(17px,1.6vw,21px)/1.42 'Public Sans',Arial,sans-serif}
+@media(max-width:609px),(orientation:portrait){#achievements.achievement-track{height:545vh}.achievement-scene{background:radial-gradient(ellipse at 50% 50%,#561642 0%,#150f18 38%,#0a0b0c 76%)}.achievement-axis{width:120vw;height:56vh;top:45%;padding:5vh 0}.achievement-axis b{font-size:26px}.achievement-certificate{display:none}.achievement-intro{top:112vh;width:calc(100% - 36px)}.achievement-intro h2{font-size:clamp(34px,11.8vw,58px)}.achievement-intro p{font-size:13px}.achievement-feature,.feature-left,.feature-right{width:calc(100% - 44px);left:22px;right:auto;text-align:center}.feature-one{top:184vh}.feature-two{top:255vh}.feature-three{top:326vh}.feature-four{top:397vh}.feature-five{top:468vh;left:50%;width:calc(100% - 44px)}.achievement-icon{margin-bottom:17px}.achievement-feature h3{font-size:22px}.achievement-feature p{font-size:13px;line-height:1.6}.achievement-proof{margin-top:-24vh;padding:28vh 22px 74px;background:linear-gradient(180deg,transparent 0,#e2dedd 24vh)}.achievement-proof-head,.achievement-proof-list article{grid-template-columns:1fr;gap:18px}.achievement-proof-head{padding-bottom:30px}.achievement-proof-list article{gap:14px;padding:30px 0}}
 #projects .work-tile__play{display:none!important}
 #identity .identity-portrait-panel{cursor:crosshair}
 #identity .identity-outfit-erase{position:absolute;z-index:3;inset:0;display:block;width:100%;height:100%;touch-action:none}
@@ -1704,6 +1745,9 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 </script>
 <script id="jiayi-project-video-replacements">
 (()=>{const replacements={0:'assets/videos/work-01-new.mp4',2:'assets/videos/work-03-new.mp4',3:'assets/videos/work-04-new.mp4',4:'assets/videos/work-05-new.mp4',5:'assets/videos/work-06-new.mp4',6:'assets/videos/work-07-new.mp4'};document.addEventListener('click',event=>{const button=event.target.closest('[data-work-index]');const src=button&&replacements[Number(button.dataset.workIndex)];if(!src)return;event.preventDefault();event.stopImmediatePropagation();const dialog=document.getElementById('worksDialog'),tag=document.getElementById('worksDialogTag'),title=document.getElementById('worksDialogTitle'),media=document.getElementById('worksDialogMedia'),text=document.getElementById('worksDialogText');if(!dialog||!media)return;const index=Number(button.dataset.workIndex)+1;tag.textContent=String(index).padStart(2,'0')+' / SELECTED VIDEO';title.textContent=button.querySelector('h3')?.textContent||'项目视频';text.textContent='点击播放原始项目视频。';media.replaceChildren();const video=document.createElement('video');video.src=src;video.controls=true;video.playsInline=true;video.preload='metadata';video.poster=button.querySelector('img')?.src||'';media.append(video);dialog.classList.add('open');document.body.style.overflow='hidden';video.play().catch(()=>{});},{capture:true});})();
+</script>
+<script id="jiayi-achievement-scroll">
+(()=>{const track=document.getElementById('achievements');if(!track)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let frame=0;const update=()=>{frame=0;const rect=track.getBoundingClientRect(),end=Math.max(1,track.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end));track.style.setProperty('--achievement-p',p.toFixed(4));track.style.setProperty('--achievement-cloud',Math.max(0,(p-.72)/.28).toFixed(4));};const request=()=>{if(!frame)frame=requestAnimationFrame(update)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});if(reduced){track.style.setProperty('--achievement-p','1');track.style.setProperty('--achievement-cloud','0');}else update();})();
 </script>
 <script id="jiayi-v7-video-loop">
 
