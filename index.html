@@ -1209,7 +1209,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
     <span class="bridge-dot"></span>
   </div>
 </div>
-<section class="world-section reveal" id="world"><div class="world-copy"><h2>WELCOME / 02</h2><p>这是我的小小世界。<br>灵感、内容、视觉和正在发生的实验，都从这里开始。</p></div><div class="world-portrait" aria-label="嘉仪的数字分身"><img class="world-portrait-img" src="assets/v18/e6ff7243b751.png" alt="嘉仪的时尚人物形象" fetchpriority="high" /></div><div class="particle-stage"><canvas id="particleWorld" aria-label="嘉仪"></canvas><div class="particle-hint">MOVE TO EXPLORE / CLICK TO SCATTER</div></div></section>
+<section class="world-section reveal" id="world"><div class="world-copy"><h2>WELCOME / 02</h2><p>这是我的小小世界。<br>灵感、内容、视觉和正在发生的实验，都从这里开始。</p></div><div class="world-portrait" aria-label="嘉仪的数字分身"><img class="world-portrait-img" src="assets/characters/jiayi-pink-floral-seated.png" alt="嘉仪的粉色造型人物形象" fetchpriority="high" /></div><div class="world-index" aria-hidden="true"><b>02</b><i></i><b>04</b></div><div class="world-scroll-mark" aria-hidden="true">SCROLL</div><div class="particle-stage"><canvas id="particleWorld" aria-label="嘉仪"></canvas><div class="particle-hint">MOVE TO EXPLORE / CLICK TO SCATTER</div></div></section>
 <section class="impact-numbers" id="impact-numbers" aria-labelledby="impact-title">
     <div class="impact-heading">
       <div>
@@ -1640,6 +1640,40 @@ main{position:relative!important;isolation:isolate!important}
 }
 @media(prefers-reduced-motion:reduce){#home .jiayi-character{animation:none!important}}
 </style>
+<style id="jiayi-world-reference-composition">
+/* Reference-led treatment for the existing particle world screen. */
+#world.world-section{display:block!important;min-height:100svh!important;height:100svh!important;margin-top:-5svh!important;padding:0!important;overflow:hidden!important;background:radial-gradient(ellipse at 42% 48%,rgba(128,21,102,.38),transparent 31%),radial-gradient(ellipse at 88% 45%,rgba(149,43,122,.22),transparent 30%),linear-gradient(122deg,#09080e 0%,#17111b 53%,#0b090e 100%)!important}
+#world.world-section:before{content:""!important;display:block!important;position:absolute!important;inset:9% 32% 13% 7%!important;border:1px solid rgba(232,80,193,.31)!important;border-radius:50%!important;background:none!important;opacity:1!important;transform:rotate(-4deg)!important;filter:none!important}
+#world .world-copy{display:none!important}
+#world .particle-stage{position:absolute!important;z-index:4!important;left:8vw!important;top:16%!important;width:min(54vw,790px)!important;height:67%!important;opacity:1!important}
+#world #particleWorld{width:100%!important;height:100%!important;filter:drop-shadow(0 0 18px rgba(238,61,205,.48))!important}
+#world .particle-hint{left:47%!important;right:auto!important;bottom:4%!important;transform:translateX(-50%)!important;white-space:nowrap!important;color:#c9bccb!important;font-size:9px!important;letter-spacing:.2em!important}
+#world .world-portrait{display:block!important;z-index:5!important;right:5vw!important;bottom:-2%!important;width:min(37vw,560px)!important;height:94%!important;opacity:1!important}
+#world .world-portrait-img{object-fit:contain!important;object-position:center bottom!important;filter:drop-shadow(-19px 12px 35px rgba(242,61,193,.28))!important}
+#world .world-index{position:absolute;z-index:6;left:3vw;top:46%;display:grid;justify-items:center;gap:10px;color:#e6d9e4;font:700 9px/1 Inter,Arial,sans-serif;letter-spacing:.08em}
+#world .world-index i{display:block;width:1px;height:92px;background:linear-gradient(#eee8ed,rgba(237,102,208,.15))}
+#world .world-scroll-mark{position:absolute;z-index:6;right:2.2vw;bottom:5%;writing-mode:vertical-rl;color:#f4c6eb;font:700 8px/1 Inter,Arial,sans-serif;letter-spacing:.24em}
+body.world-reference-active nav{background:rgba(10,8,14,.72)!important;border-bottom-color:rgba(241,111,211,.24)!important;backdrop-filter:blur(16px)}
+body.world-reference-active nav .logo,body.world-reference-active nav .navlinks a,body.world-reference-active nav .contact{color:#fff!important}
+body.world-reference-active nav .contact{border-color:#eb76ce!important;background:rgba(35,14,32,.64)!important}
+@media(max-width:850px){
+ #world.world-section{height:auto!important;min-height:760px!important;margin-top:-3svh!important}
+ #world.world-section:before{inset:10% -23% 35% -28%!important}
+ #world .particle-stage{left:4vw!important;top:11%!important;width:92vw!important;height:48%!important}
+ #world .world-portrait{right:3vw!important;bottom:-1%!important;width:68vw!important;height:58%!important;opacity:.9!important}
+ #world .particle-hint{left:50%!important;bottom:0!important;font-size:7px!important}
+ #world .world-index{left:5vw!important;top:55%!important}.world-scroll-mark{display:none!important}
+}
+@media(max-width:560px){
+ #world.world-section{min-height:650px!important}
+ #world .particle-stage{top:9%!important;height:44%!important}
+ #world .world-portrait{width:80vw!important;height:59%!important;right:-4vw!important}
+ #world .world-index{top:52%!important}.world-index i{height:52px!important}
+}
+</style>
+<script id="jiayi-world-reference-nav">
+(()=>{const world=document.getElementById('world');if(!world||!('IntersectionObserver'in window))return;const observer=new IntersectionObserver(entries=>{document.body.classList.toggle('world-reference-active',entries.some(entry=>entry.isIntersecting));},{threshold:.45});observer.observe(world)})();
+</script>
 <script id="jiayi-v7-video-loop">
 
 /* V7: reliable looping without switching the hero into its old duplicate-portrait state. */
