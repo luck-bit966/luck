@@ -1434,6 +1434,16 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 #identity .identity-portrait{z-index:4!important;filter:drop-shadow(0 22px 26px rgba(27,17,26,.26)) contrast(1.05)!important}#identity .identity-outfit-erase{z-index:5!important}#identity .identity-photo-index,#identity .identity-photo-caption,#identity .identity-outfit-hint,#identity .yami-turnaround-card,#identity .identity-floating-card{z-index:7!important}
 @media(max-width:609px),(orientation:portrait){#identity .identity-fusion-type{inset:14% 4% 14%;font-size:clamp(46px,17vw,74px)}#identity .identity-fusion-type span:nth-child(2){margin-left:16%}}
 </style>
+<style id="jiayi-portrait-fusion-fix">
+/* The previous erase canvas was still painting the old lace look above the new portrait. */
+#identity .identity-outfit-erase,#identity .identity-outfit-hint{display:none!important}
+#identity .identity-fusion-type{z-index:6!important;mix-blend-mode:normal!important;opacity:1!important;inset:15% 4% 12%!important;color:rgba(24,18,25,.88)!important}
+#identity .identity-fusion-type span{background:rgba(255,255,255,.18)!important;backdrop-filter:blur(1px);border:1px solid rgba(237,107,223,.6);box-shadow:10px 10px 0 rgba(237,107,223,.18)!important}
+#identity .identity-fusion-type span:nth-child(1){margin-left:-2%!important;transform:translateX(-6%)!important}
+#identity .identity-fusion-type span:nth-child(2){margin-left:33%!important;color:#ed4ecc!important;transform:translateX(9%)!important}
+#identity .identity-fusion-type span:nth-child(3){margin-left:-3%!important;color:#fff!important;background:#18141b!important;transform:translateX(-3%)!important}
+#identity .identity-portrait{z-index:5!important}
+</style>
 <style id="jiayi-certificate-archive">
 .certificate-archive{position:relative;height:285vh;background:#f7f5ef;color:#17131a;overflow:clip}
 .certificate-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff 0 18%,#f7f5ef 64%,#ebe7e8 100%)}
