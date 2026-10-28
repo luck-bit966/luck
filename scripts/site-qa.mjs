@@ -33,6 +33,15 @@ async function exercise(name, viewport) {
    await page.locator('#workGallery .work-gallery-item').last().click();
    await displayed.evaluate(im=>im.decode());
   }
+  if([0,1,4,6].includes(i)){
+   const videoButton=page.locator('#workGallery .work-gallery-item').filter({hasText:'原始视频'});
+   if(await videoButton.count()!==1)throw Error(name+': expected original video control for project '+(i+1));
+   await videoButton.click();
+   const video=page.locator('#workVideoPanel video');
+   if(await video.count()!==1)throw Error(name+': video player missing for project '+(i+1));
+   const duration=await video.evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve(v.duration);v.addEventListener('loadedmetadata',()=>resolve(v.duration),{once:true});v.addEventListener('error',()=>reject(v.error?.message||'video error'),{once:true})}));
+   if(!(duration>0))throw Error(name+': invalid duration for project '+(i+1));
+  }
   await page.keyboard.press('Escape');
   if(await dialog.isVisible())throw Error(name+': Escape did not close modal');
  }
@@ -42,5 +51,5 @@ try{
  await exercise('desktop', {width:1440,height:900});
  await exercise('mobile',{width:390,height:844});
  if(errors.length)throw Error('Uncaught browser errors:\n'+errors.join('\n'));
- console.log('PASS: 8 projects, 7 cover images, gallery modals, dashboard snapshots, Esc, responsive overflow, no JS errors');
+ console.log('PASS: 8 projects, 7 cover images, 4 original video players, gallery modals, dashboard snapshots, Esc, responsive overflow, no JS errors');
 }finally{await browser.close();}

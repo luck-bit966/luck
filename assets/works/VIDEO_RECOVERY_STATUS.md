@@ -31,6 +31,15 @@ Also found Library archives: AI视频(1)(1).zip (325791816 bytes) and 作品集.
 
 The durations/descriptions above come from the historical visual review sheet, not a new decode of each original.
 
-## Important boundary
+## Website playback status
 
-The GitHub repository tree currently has no standalone MP4/MOV/WebM files. The embedded V18 showreel is not a substitute for individual project originals. Although several originals are present in the Library, they have not yet been uploaded to the website or verified in its player. The current execution environment failed when attempting to inspect/extract the binary archives, and the available GitHub file-write action accepts UTF-8 text only. No independent-video playback is claimed.
+The following original MP4 files are now stored in the repository and connected to their corresponding project-detail modals:
+
+| Website project | Hosted asset | Source file | Format |
+|---|---|---|---|
+| 01 / AI Story | `assets/videos/ai-story.mp4` | `8.mp4` | 720×1280, H.264/AAC |
+| 02 / AI Visual | `assets/videos/ai-visual.mp4` | `7-副本.mp4` | 720×1280, H.264/AAC |
+| 05 / Product TVC | `assets/videos/product-tvc.mp4` | `11.mp4` | 2560×1440, H.264/AAC |
+| 07 / Real Person | `assets/videos/real-person.mp4` | `真实感人物1.mp4` | 720×1280, H.264/AAC |
+
+The former inline V18 base64 player has been removed. It was not a dependable substitute for individual project media; each connected project now uses a native HTML video control and its own hosted MP4.
