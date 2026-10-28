@@ -1481,6 +1481,37 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 }
 </style>
 <style id="jiayi-certificate-archive">
+/* Shared portrait and explanatory chapters, driven by the same scroll position. */
+#identity .identity-story{display:none}
+@media(min-width:901px) and (prefers-reduced-motion:no-preference){
+ #identity.identity-section{height:480vh}
+ #identity .identity-dark-head,#identity .identity-fusion-type,#identity .identity-motion-prompt{display:none!important}
+ #identity .identity-portrait-panel{background:#f4f0f3!important}
+ #identity .identity-portrait-panel:before{inset:7% 4%;border:1px solid #291a2718;border-radius:0;transform:none!important}
+ #identity .identity-portrait-panel:after{display:none}
+ #identity .identity-portrait{left:38%!important;width:59%!important;height:85vh!important;bottom:0!important;transform:translate3d(var(--nova-x),var(--nova-y),0) scale(calc(1 + var(--nova-zoom)*.22))!important;transform-origin:52% 36%;animation:none!important}
+ #identity .identity-story{display:block;position:absolute;z-index:10;inset:0;pointer-events:none;color:#211a23}
+ #identity .story-top{position:absolute;top:7%;left:7%;right:7%;display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #211a2326;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.18em}
+ #identity .story-chapter{position:absolute;left:8%;top:26%;width:34%;max-width:490px;opacity:var(--chapter-alpha,0);transform:translateY(var(--chapter-y,24px));will-change:opacity,transform}
+ #identity .story-chapter .identity-intro{font-size:clamp(24px,2.7vw,40px);line-height:1.55;margin-top:24px;font-weight:650}
+ #identity .story-chapter h3{font-size:clamp(27px,3vw,44px);line-height:1.3;letter-spacing:-.05em}
+ #identity .story-chapter p{font-size:clamp(13px,1.1vw,16px);line-height:1.9}
+ #identity .story-chapter .identity-role-block{border-top:0;padding-top:0}
+ #identity .story-chapter .identity-work{padding-top:0}
+ #identity .story-chapter .identity-skills{border:0}
+ #identity .story-chapter .identity-process{background:transparent;color:#211a23;padding:0}
+ #identity .story-chapter .identity-process-track{grid-template-columns:1fr;gap:0}
+ #identity .story-chapter .identity-step{opacity:1;transform:none;min-height:0;padding:15px 0;border:0;border-top:1px solid #211a2320;background:none;grid-template-columns:32px 1fr}
+ #identity .story-chapter .identity-step h3{color:#211a23;font-size:18px;margin:0 0 5px}
+ #identity .story-chapter .identity-step p{color:#766b78;font-size:12px}
+ #identity .story-chapter .identity-step-number{background:#ed6bdf22;color:#9b267e;border-radius:0}
+ #identity .story-chapter .identity-process-count,#identity .story-chapter .identity-process-footer{display:none}
+ #identity .story-bottom{position:absolute;bottom:7%;left:8%;width:28%;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.16em;color:#80727e}
+ #identity .story-line{height:2px;background:#211a2318;margin-top:16px}
+ #identity .story-line:after{content:"";display:block;height:100%;background:#cf459f;width:calc(var(--nova-p)*100%)}
+ #identity .identity-motion-state{color:#80727e;opacity:1}
+ body.identity-story-ready #identity-details{display:none}
+}
 #identity-details{position:relative;background:#f7f3f7;color:#19161d;padding:80px max(22px,6vw) 0}
 #identity-details .identity-copy-panel{display:block;max-width:1120px;margin:auto;opacity:1;transform:none}
 #identity-details .identity-intro{max-width:850px;font-size:clamp(22px,3vw,40px);line-height:1.5}
@@ -1909,6 +1940,17 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 (()=>{const section=document.getElementById('identity'),panel=section?.querySelector('.identity-portrait-panel'),state=document.getElementById('identityMotionState'),prompt=document.getElementById('identityMotionPrompt');if(!section||!panel)return;let frame=0,current=0,px=0,py=0,tx=0,ty=0;const labels=['01 / WIDE PORTRAIT','02 / PUSH IN','03 / MAKE IT REAL'];const render=()=>{frame=0;const rect=section.getBoundingClientRect(),distance=Math.max(1,section.offsetHeight-innerHeight),target=Math.max(0,Math.min(1,-rect.top/distance));current+=(target-current)*.105;const zoom=Math.max(0,Math.min(1,current/.62));const type=Math.max(0,Math.min(1,(current-.5)/.34));px+=(tx-px)*.055;py+=(ty-py)*.055;section.style.setProperty('--nova-p',current.toFixed(4));section.style.setProperty('--nova-zoom',zoom.toFixed(4));section.style.setProperty('--nova-type',type.toFixed(4));section.style.setProperty('--nova-x',`${px.toFixed(2)}px`);section.style.setProperty('--nova-y',`${py.toFixed(2)}px`);if(state)state.textContent=labels[current<.3?0:current<.68?1:2];if(Math.abs(target-current)>.0008||Math.abs(tx-px)>.08||Math.abs(ty-py)>.08)frame=requestAnimationFrame(render)};const queue=()=>{if(!frame)frame=requestAnimationFrame(render)};addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});if(matchMedia('(hover:hover) and (pointer:fine)').matches){panel.addEventListener('pointermove',event=>{const r=panel.getBoundingClientRect();tx=((event.clientX-r.left)/r.width-.5)*18;ty=((event.clientY-r.top)/r.height-.5)*10;queue()},{passive:true});panel.addEventListener('pointerleave',()=>{tx=ty=0;queue()},{passive:true})}const prompts=['IDEAS, MADE REAL.','CONTENT WITH A POINT.','CREATE WHAT PEOPLE FEEL.'];let pi=0,ci=0,deleting=false;const type=()=>{if(!prompt)return;const text=prompts[pi];prompt.textContent=text.slice(0,ci);if(!deleting&&ci<text.length){ci++;setTimeout(type,36);return}if(!deleting){deleting=true;setTimeout(type,1500);return}if(ci>0){ci--;setTimeout(type,16);return}deleting=false;pi=(pi+1)%prompts.length;setTimeout(type,260)};type();render()})();
 </script>
 <script id="jiayi-achievement-scroll">
+(()=>{
+ const root=document.getElementById('identity'),details=document.getElementById('identity-details');
+ if(!root||!details)return;
+ const scene=document.createElement('div');scene.className='identity-story';
+ scene.innerHTML='<div class="story-top"><span>JIAYI.EXE / CREATIVE IDENTITY</span><span>灵感不设边界</span></div><div class="story-bottom"><span>SCROLL TO DISCOVER / 01 — 04</span><div class="story-line"></div></div>';
+ const groups=[['.identity-kicker','.identity-intro'],['.identity-role-block','.identity-skills'],['.identity-work'],['.identity-process']];
+ const chapters=groups.map(selectors=>{const article=document.createElement('article');article.className='story-chapter';selectors.forEach(selector=>{const original=details.querySelector(selector);if(original)article.append(original.cloneNode(true))});scene.append(article);return article});
+ root.querySelector('.identity-portrait-panel').append(scene);document.body.classList.add('identity-story-ready');
+ const paint=()=>{const p=Number(root.style.getPropertyValue('--nova-p'))||0;chapters.forEach((chapter,i)=>{const center=i/3,d=Math.abs(p-center),a=Math.max(0,Math.min(1,(.23-d)/.07));chapter.style.setProperty('--chapter-alpha',a);chapter.style.setProperty('--chapter-y',((center-p)*80)+'px');chapter.setAttribute('aria-hidden',a<.1?'true':'false')})};
+ new MutationObserver(paint).observe(root,{attributes:true,attributeFilter:['style']});paint();
+})();
 (()=>{const track=document.getElementById('achievements');if(!track)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let frame=0;const update=()=>{frame=0;const rect=track.getBoundingClientRect(),end=Math.max(1,track.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end));track.style.setProperty('--achievement-p',p.toFixed(4));track.style.setProperty('--achievement-cloud',Math.max(0,(p-.72)/.28).toFixed(4));};const request=()=>{if(!frame)frame=requestAnimationFrame(update)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});if(reduced){track.style.setProperty('--achievement-p','1');track.style.setProperty('--achievement-cloud','0');}else update();})();
 </script>
 <script id="jiayi-certificate-scroll">
