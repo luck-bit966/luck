@@ -1425,6 +1425,42 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </style>
 </section>
 
+<style id="jiayi-certificate-archive">
+.certificate-archive{position:relative;height:285vh;background:#f7f5ef;color:#17131a;overflow:clip}
+.certificate-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff 0 18%,#f7f5ef 64%,#ebe7e8 100%)}
+.certificate-stage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 11vw,rgba(27,17,26,.045) 11vw calc(11vw + 1px)),linear-gradient(180deg,rgba(255,255,255,.72),transparent 20%,transparent 80%,rgba(30,18,29,.06));pointer-events:none}
+.certificate-head{position:absolute;z-index:4;top:clamp(22px,4vh,50px);left:50%;width:min(100% - 52px,1200px);transform:translateX(-50%);display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:20px;pointer-events:none}
+.certificate-head a,.certificate-head>span{font:700 8px/1 'Public Sans',Arial,sans-serif;letter-spacing:.16em;color:#5d5560;text-decoration:none;pointer-events:auto}.certificate-head>span{text-align:right}.certificate-head h2{grid-column:1/-1;justify-self:center;margin:clamp(23px,4vh,48px) 0 0;text-align:center;font:900 clamp(42px,6.5vw,92px)/.78 'Exo 2',Arial,sans-serif;letter-spacing:-.09em}.certificate-head h2 em{color:#d946c1;font-style:normal}.certificate-head p{grid-column:1/-1;justify-self:center;max-width:390px;margin:16px 0 0;text-align:center;color:#655b65;font:400 12px/1.55 'Public Sans',Arial,sans-serif}
+.certificate-rows{position:absolute;inset:0;z-index:2;pointer-events:none}.certificate-row{position:absolute;left:50%;display:flex;align-items:center;gap:clamp(22px,3.4vw,56px);width:max-content;will-change:transform}.certificate-row-a{top:28%;transform:translateX(calc(-50% + var(--cert-a,0%)))}.certificate-row-b{top:48%;transform:translateX(calc(-50% + var(--cert-b,0%)))}.certificate-row-c{top:68%;transform:translateX(calc(-50% + var(--cert-c,0%)))}
+.certificate-card{box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;flex:0 0 clamp(210px,22vw,330px);height:clamp(128px,15vw,190px);margin:0;padding:10px;background:#fff;border:1px solid rgba(30,20,29,.16);box-shadow:0 16px 34px rgba(28,18,27,.12);transform:rotate(var(--tilt,0deg));transition:transform .35s ease,box-shadow .35s ease;pointer-events:auto}.certificate-card:nth-child(1){--tilt:-5deg}.certificate-card:nth-child(2){--tilt:2.5deg}.certificate-card:nth-child(3){--tilt:-2deg}.certificate-card--portrait{flex-basis:clamp(118px,12vw,172px);height:clamp(166px,20vw,240px)}.certificate-card img{display:block;min-width:0;width:100%;height:calc(100% - 20px);object-fit:contain}.certificate-card figcaption{margin-top:6px;color:#6a6069;font:700 7px/1 'Public Sans',Arial,sans-serif;letter-spacing:.14em}.certificate-card:hover{transform:translateY(-10px) rotate(0deg) scale(1.035);box-shadow:0 24px 46px rgba(28,18,27,.2);z-index:3}
+.certificate-progress{position:absolute;z-index:4;bottom:clamp(18px,4vh,44px);left:50%;width:min(100% - 52px,1200px);display:flex;align-items:center;gap:14px;transform:translateX(-50%);color:#625963;font:700 8px/1 'Public Sans',Arial,sans-serif;letter-spacing:.14em}.certificate-progress i{display:block;flex:1;height:1px;background:linear-gradient(90deg,#d946c1 var(--cert-progress,0%),rgba(30,20,29,.18) var(--cert-progress,0%))}.certificate-progress b{font-weight:700}
+@media(max-width:609px),(orientation:portrait){.certificate-archive{height:310vh}.certificate-head{width:calc(100% - 36px);grid-template-columns:1fr 1fr}.certificate-head h2{margin-top:28px;font-size:clamp(38px,13vw,62px)}.certificate-head p{max-width:310px;font-size:11px}.certificate-row{gap:18px}.certificate-row-a{top:30%}.certificate-row-b{top:51%}.certificate-row-c{top:72%}.certificate-card{flex-basis:172px;height:108px;padding:7px}.certificate-card--portrait{flex-basis:102px;height:150px}.certificate-card figcaption{font-size:6px}.certificate-progress{width:calc(100% - 36px)}}
+@media(prefers-reduced-motion:reduce){.certificate-row{transform:translateX(-50%)!important}.certificate-card{transition:none}.certificate-progress i{background:#d946c1}}
+</style>
+<section class="certificate-archive" id="certificates" aria-labelledby="certificate-title">
+  <div class="certificate-stage">
+    <header class="certificate-head"><a href="#identity">← BACK TO TIMELINE</a><span>JIAYI.exe / ARCHIVE 2026</span><h2 id="certificate-title">HONOURS<br><em>ON FILE.</em></h2><p>从创作实践到专业能力，把每一次认真完成的事，整理成可以回看的档案。</p></header>
+    <div class="certificate-rows" aria-label="嘉仪的荣誉与证书档案">
+      <div class="certificate-row certificate-row-a">
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-01.jpg" alt="嘉仪荣誉证书 01" loading="lazy"><figcaption>01 / HONOUR</figcaption></figure>
+        <figure class="certificate-card"><img src="assets/certificates/certificate-02.jpg" alt="嘉仪荣誉证书 02" loading="lazy"><figcaption>02 / AWARD</figcaption></figure>
+        <figure class="certificate-card"><img src="assets/certificates/certificate-03.jpg" alt="嘉仪荣誉证书 03" loading="lazy"><figcaption>03 / AWARD</figcaption></figure>
+      </div>
+      <div class="certificate-row certificate-row-b">
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-04.jpg" alt="嘉仪荣誉证书 04" loading="lazy"><figcaption>04 / ARCHIVE</figcaption></figure>
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-05.jpg" alt="嘉仪荣誉证书 05" loading="lazy"><figcaption>05 / RECORD</figcaption></figure>
+        <figure class="certificate-card"><img src="assets/certificates/certificate-06.jpg" alt="嘉仪荣誉证书 06" loading="lazy"><figcaption>06 / AWARD</figcaption></figure>
+      </div>
+      <div class="certificate-row certificate-row-c">
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-07.jpg" alt="嘉仪专业证书 07" loading="lazy"><figcaption>07 / CERTIFIED</figcaption></figure>
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-08.jpg" alt="嘉仪专业证书 08" loading="lazy"><figcaption>08 / CERTIFIED</figcaption></figure>
+        <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-09.jpg" alt="嘉仪专业证书 09" loading="lazy"><figcaption>09 / CERTIFIED</figcaption></figure>
+      </div>
+    </div>
+    <div class="certificate-progress"><span>SCROLL TO BROWSE</span><i></i><b>09 / 09</b></div>
+  </div>
+</section>
+
 
 
 
@@ -1802,6 +1838,9 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 </script>
 <script id="jiayi-achievement-scroll">
 (()=>{const track=document.getElementById('achievements');if(!track)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let frame=0;const update=()=>{frame=0;const rect=track.getBoundingClientRect(),end=Math.max(1,track.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end));track.style.setProperty('--achievement-p',p.toFixed(4));track.style.setProperty('--achievement-cloud',Math.max(0,(p-.72)/.28).toFixed(4));};const request=()=>{if(!frame)frame=requestAnimationFrame(update)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});if(reduced){track.style.setProperty('--achievement-p','1');track.style.setProperty('--achievement-cloud','0');}else update();})();
+</script>
+<script id="jiayi-certificate-scroll">
+(()=>{const archive=document.getElementById('certificates');if(!archive)return;const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;let frame=0;const update=()=>{frame=0;const rect=archive.getBoundingClientRect(),end=Math.max(1,archive.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end));archive.style.setProperty('--cert-a',`${-p*34}%`);archive.style.setProperty('--cert-b',`${p*38}%`);archive.style.setProperty('--cert-c',`${-p*28}%`);archive.style.setProperty('--cert-progress',`${Math.round(p*100)}%`)};const request=()=>{if(!frame)frame=requestAnimationFrame(update)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});if(reduced){archive.style.setProperty('--cert-progress','100%')}else update()})();
 </script>
 <script id="jiayi-achievement-stages">
 (()=>{const track=document.getElementById('achievements');if(!track)return;const update=()=>{const r=track.getBoundingClientRect(),end=Math.max(1,track.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-r.top/end));track.classList.toggle('stage-growth',p>=.31);track.classList.toggle('stage-honours',p>=.55);};addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});update();})();
