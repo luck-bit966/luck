@@ -24,9 +24,13 @@ async function exercise(name, viewport) {
   if (await page.locator('.work-tile--wide').count() !== 2) throw Error(name + ': expected wide cards 01 and 08');
   if (await page.locator('.work-tile--tall').count() !== 6) throw Error(name + ': expected portrait cards 02–07');
 
-  const broken = await page.locator('.selected-works__grid .work-tile__image').evaluateAll(imgs =>
-    imgs.filter(im => !im.complete || im.naturalWidth === 0).map(im => im.getAttribute('src'))
-  );
+  const broken = await page.locator('.selected-works__grid .work-tile__image').evaluateAll(async imgs => {
+    await Promise.all(imgs.map(async im => {
+      im.loading = 'eager';
+      try { await im.decode(); } catch {}
+    }));
+    return imgs.filter(im => !im.complete || im.naturalWidth === 0).map(im => im.getAttribute('src'));
+  });
   if (broken.length) throw Error(name + ': missing cover(s): ' + broken.join(', '));
 
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
