@@ -1764,6 +1764,29 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 #achievements.stage-honours .certificate-c{opacity:calc(.95 - var(--achievement-cloud,0)*.95);transform:rotate(5deg) translateY(calc(var(--achievement-p,0)*-28px))}
 #achievements.stage-honours .feature-five{opacity:1;transform:translateX(-50%)}
 @media(prefers-reduced-motion:reduce){#achievements .certificate-b,#achievements .certificate-c,#achievements .feature-two,#achievements .feature-three,#achievements .feature-four,#achievements .feature-five{opacity:1!important;transform:none!important}}
+
+/* Desktop editorial composition: one clear centre, four quiet reading anchors. */
+@media(min-width:610px) and (orientation:landscape){
+ #achievements .achievement-axis{width:min(62vw,760px);height:min(71vh,690px);padding:0;display:block}
+ #achievements .achievement-axis i{position:absolute;left:50%;width:1px;height:15vh;transform:translateX(-50%);opacity:.72}
+ #achievements .achievement-axis i:first-child{top:9%}
+ #achievements .achievement-axis i:last-child{bottom:9%}
+ #achievements .achievement-axis b{position:absolute;left:50%;top:50%;width:270px;transform:translate(-50%,-50%);font-size:clamp(27px,3vw,43px);line-height:.86;letter-spacing:-.075em}
+ #achievements .achievement-certificate{width:clamp(150px,15vw,210px);padding:15px 16px}
+ #achievements .achievement-certificate strong{margin:11px 0 6px;font-size:clamp(28px,3vw,43px)}
+ #achievements .certificate-a{left:clamp(24px,5vw,82px);top:11%}
+ #achievements .certificate-b{right:clamp(24px,5vw,82px);top:38%}
+ #achievements .certificate-c{left:clamp(38px,7vw,112px);bottom:9%}
+ #achievements .achievement-feature{width:min(260px,22vw)}
+ #achievements .feature-left{right:calc(50% + 96px)}
+ #achievements .feature-right{left:calc(50% + 96px)}
+ #achievements .achievement-feature h3{margin-bottom:10px;font-size:clamp(19px,1.45vw,24px);line-height:1}
+ #achievements .achievement-feature p{font-size:12px;line-height:1.52}
+ #achievements .achievement-icon{margin-bottom:18px;font-size:30px}
+ #achievements .feature-one,.feature-two{top:185vh}
+ #achievements .feature-three,.feature-four{top:222vh}
+ #achievements .feature-five{top:258vh}
+}
 </style>
 <script id="jiayi-identity-outfit-erase-script">
 (()=>{const panel=document.querySelector('#identity .identity-portrait-panel');const canvas=panel?.querySelector('.identity-outfit-erase');if(!panel||!canvas)return;const under=panel.querySelector('.identity-portrait');const top=new Image();top.src='assets/characters/jiayi-lace-lookback.png';top.alt='';const sources=['assets/characters/jiayi-punk-crouch.png','assets/characters/jiayi-lace-lookback.png','assets/characters/jiayi-street-headphones.png'];panel.querySelectorAll('.identity-film-frame img').forEach((img,i)=>{img.src=sources[i];});panel.querySelectorAll('.identity-floating-card img').forEach((img,i)=>{img.src=sources[i===0?0:2];});const study=panel.querySelector('.yami-turnaround-card img');if(study){study.src=sources[1];study.alt='嘉仪白蕾丝造型人物档案';}const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced)return;const ctx=canvas.getContext('2d');let ready=false;function draw(){const rect=canvas.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);canvas.width=Math.max(1,Math.round(rect.width*d));canvas.height=Math.max(1,Math.round(rect.height*d));ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,rect.width,rect.height);const maxH=Math.min(rect.height,690);const ratio=Math.min(rect.width/top.naturalWidth,maxH/top.naturalHeight);const w=top.naturalWidth*ratio,h=top.naturalHeight*ratio,x=(rect.width-w)/2,y=rect.height-h;ctx.drawImage(top,x,y,w,h);ready=true;}top.addEventListener('load',draw,{once:true});if(top.complete)draw();new ResizeObserver(draw).observe(panel);function erase(event){if(!ready)return;const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top,brush=Math.max(58,Math.min(112,r.width*.13));const g=ctx.createRadialGradient(x,y,brush*.22,x,y,brush);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.92)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.save();ctx.globalCompositeOperation='destination-out';ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,brush,0,Math.PI*2);ctx.fill();ctx.restore();panel.classList.add('is-erasing');}canvas.addEventListener('pointerdown',event=>{canvas.setPointerCapture(event.pointerId);erase(event)});canvas.addEventListener('pointermove',event=>{if(event.buttons||event.pressure>0)erase(event)});})();
