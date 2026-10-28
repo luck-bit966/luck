@@ -47,11 +47,14 @@ async function exercise(name, viewport) {
     if ([0,1,4,6].includes(i)) {
       const video = media.locator('video');
       if (await video.count() !== 1) throw Error(name + ': expected video player for card ' + (i + 1));
-      const duration = await video.evaluate(v => new Promise((resolve, reject) => {
-        if (v.readyState >= 1 && Number.isFinite(v.duration)) return resolve(v.duration);
-        v.addEventListener('loadedmetadata', () => resolve(v.duration), { once:true });
-        v.addEventListener('error', () => reject(new Error('video failed to load: ' + v.currentSrc)), { once:true });
-      }));
+      const duration = await video.evaluate(v => Promise.race([
+        new Promise((resolve, reject) => {
+          if (v.readyState >= 1 && Number.isFinite(v.duration)) return resolve(v.duration);
+          v.addEventListener('loadedmetadata', () => resolve(v.duration), { once:true });
+          v.addEventListener('error', () => reject(new Error('video failed to load: ' + v.currentSrc)), { once:true });
+        }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('video metadata timeout: ' + v.currentSrc)), 10000))
+      ]));
       if (!(duration > 0)) throw Error(name + ': invalid video duration for card ' + (i + 1));
     } else {
       const image = media.locator('img');
