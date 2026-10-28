@@ -1325,7 +1325,8 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
           <span>LOOK / 03</span>
         </div>
       </div>
-      <img class="identity-portrait" src="assets/characters/jiayi-street-headphones.png" alt="嘉仪的耳机街头造型主视觉" loading="lazy" />
+      <img class="identity-portrait" src="assets/characters/jiayi-punk-street-seated.png" alt="嘉仪的朋克街头造型主视觉" loading="lazy" />
+      <div class="identity-fusion-type" aria-hidden="true"><span>MAKE</span><span>IT</span><span>REAL.</span></div>
       <canvas class="identity-outfit-erase" aria-label="在人物上移动鼠标，擦除白蕾丝造型并切换为耳机街头造型"></canvas>
       <span class="identity-outfit-hint" aria-hidden="true">ERASE TO CHANGE LOOK ✦</span>
       <div class="identity-floating-card identity-floating-card-one">
@@ -1425,6 +1426,14 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </style>
 </section>
 
+<style id="jiayi-portrait-type-fusion">
+#identity .identity-portrait-panel{background:radial-gradient(circle at 48% 46%,#fff 0 18%,#f4eaf3 56%,#eadfeb 100%)}
+#identity .identity-fusion-type{position:absolute;z-index:3;inset:13% 5% 10%;display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:clamp(0px,.7vw,10px);pointer-events:none;mix-blend-mode:multiply;color:#17131a;font:900 clamp(48px,8.5vw,120px)/.75 'Exo 2',Arial,sans-serif;letter-spacing:-.1em;text-align:left;opacity:.9}
+#identity .identity-fusion-type span{display:block;width:max-content;max-width:100%;padding:.02em .05em;background:linear-gradient(90deg,rgba(255,255,255,.3),rgba(237,107,223,.22));box-shadow:0 0 0 1px rgba(237,107,223,.32)}
+#identity .identity-fusion-type span:nth-child(1){margin-left:0}#identity .identity-fusion-type span:nth-child(2){margin-left:25%;color:#ed4ecc}#identity .identity-fusion-type span:nth-child(3){margin-left:6%;color:#f8f5fa;text-shadow:2px 2px 0 #17131a;background:#17131a}
+#identity .identity-portrait{z-index:4!important;filter:drop-shadow(0 22px 26px rgba(27,17,26,.26)) contrast(1.05)!important}#identity .identity-outfit-erase{z-index:5!important}#identity .identity-photo-index,#identity .identity-photo-caption,#identity .identity-outfit-hint,#identity .yami-turnaround-card,#identity .identity-floating-card{z-index:7!important}
+@media(max-width:609px),(orientation:portrait){#identity .identity-fusion-type{inset:14% 4% 14%;font-size:clamp(46px,17vw,74px)}#identity .identity-fusion-type span:nth-child(2){margin-left:16%}}
+</style>
 <style id="jiayi-certificate-archive">
 .certificate-archive{position:relative;height:285vh;background:#f7f5ef;color:#17131a;overflow:clip}
 .certificate-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff 0 18%,#f7f5ef 64%,#ebe7e8 100%)}
@@ -1443,7 +1452,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </style>
 <section class="certificate-archive" id="certificates" aria-labelledby="certificate-title">
   <div class="certificate-stage">
-    <header class="certificate-head"><a href="#identity">← BACK TO TIMELINE</a><span>JIAYI.exe / ARCHIVE 2026</span><h2 id="certificate-title">HONOURS<br><em>ON FILE.</em></h2><p>从创作实践到专业能力，把每一次认真完成的事，整理成可以回看的档案。</p></header>
+    <header class="certificate-head"><a href="#identity">← BACK TO TIMELINE</a><span>JIAYI.exe / ARCHIVE 2026</span><h2 id="certificate-title">EARNED<br><em>NOT GIVEN.</em></h2><p>从创作实践到专业能力，把每一次认真完成的事，整理成可以回看的档案。</p></header>
     <div class="certificate-rows" aria-label="嘉仪的荣誉与证书档案">
       <div class="certificate-row certificate-row-a">
         <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-01.jpg" alt="嘉仪荣誉证书 01" loading="lazy"><figcaption>01 / HONOUR</figcaption></figure>
