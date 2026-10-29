@@ -1342,6 +1342,38 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
       <div class="identity-photo-caption"><span>JIAYI</span><span>REAL PERSON / REAL IDEAS</span></div>
       <span class="identity-photo-spark identity-photo-spark-a" aria-hidden="true">✳</span>
       <span class="identity-photo-spark identity-photo-spark-b" aria-hidden="true">✦</span>
+      <div class="identity-story" aria-label="关于嘉仪的滚动叙事">
+        <div class="story-top"><span>JIAYI.EXE / CREATIVE IDENTITY</span><span>灵感不设边界</span></div>
+        <article class="story-chapter story-chapter-intro is-active">
+          <div class="identity-kicker"><span class="identity-live-dot"></span> 关于我</div>
+          <p class="identity-intro">我希望通过这个个人网页，<br>让你认识真实的我，<br>以及我正在探索和创造的东西。</p>
+        </article>
+        <article class="story-chapter story-chapter-role">
+          <span class="identity-mini-label">01 / 我的身份与能力</span>
+          <div class="identity-role-block"><h3>内容与<br>短视频运营</h3></div>
+          <div class="story-skill-list">
+            <div><b>AI 内容创作</b><span>用 AI 探索更多内容表达的可能性。</span></div>
+            <div><b>短视频运营</b><span>让创意通过视频内容被更多人看见。</span></div>
+          </div>
+        </article>
+        <article class="story-chapter story-chapter-work">
+          <span class="identity-mini-label">02 / 我的工作方式</span>
+          <h3>灵感不是终点，<br><em>做出来</em>才有意思。</h3>
+          <p>我喜欢从一个想法出发，尝试不同的表达方式，再把它变成真正看得见的内容。</p>
+          <p>AI 不只是工具，短视频也不只是形式。它们都是让脑海里的想法变成现实的方式。</p>
+        </article>
+        <article class="story-chapter story-chapter-process">
+          <span class="identity-mini-label">03 / 我的创作流程</span>
+          <h3>FROM IDEA<br>TO ACTION.</h3>
+          <div class="story-process-list">
+            <div><b>01</b><span><strong>IDEA</strong>发现想法与创作切入点</span></div>
+            <div><b>02</b><span><strong>EXPERIMENT</strong>探索不同的表达方式</span></div>
+            <div><b>03</b><span><strong>CREATE</strong>把想法转化为具体内容</span></div>
+            <div><b>04</b><span><strong>MAKE IT HAPPEN</strong>让创意真正落地</span></div>
+          </div>
+        </article>
+        <div class="story-bottom"><span>SCROLL TO DISCOVER / <b id="identityStoryIndex">01</b> — 04</span><div class="story-line"></div></div>
+      </div>
     </div>
 
     <div class="identity-copy-panel">
@@ -1483,7 +1515,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 <style id="jiayi-certificate-archive">
 /* Shared portrait and explanatory chapters, driven by the same scroll position. */
 #identity .identity-story{display:none}
-@media(min-width:901px) and (prefers-reduced-motion:no-preference){
+@media(min-width:901px){
  #identity.identity-section{height:480vh}
  #identity .identity-dark-head,#identity .identity-fusion-type,#identity .identity-motion-prompt{display:none!important}
  #identity .identity-portrait-panel{background:#f4f0f3!important}
@@ -1492,34 +1524,27 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
  #identity .identity-portrait{left:38%!important;width:59%!important;height:85vh!important;bottom:0!important;transform:translate3d(var(--nova-x),var(--nova-y),0) scale(calc(1 + var(--nova-zoom)*.22))!important;transform-origin:52% 36%;animation:none!important}
  #identity .identity-story{display:block;position:absolute;z-index:10;inset:0;pointer-events:none;color:#211a23}
  #identity .story-top{position:absolute;top:7%;left:7%;right:7%;display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #211a2326;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.18em}
- #identity .story-chapter{position:absolute;left:8%;top:26%;width:34%;max-width:490px;opacity:var(--chapter-alpha,0);transform:translateY(var(--chapter-y,24px));will-change:opacity,transform}
+ #identity .story-chapter{position:absolute;left:8%;top:24%;width:35%;max-width:500px;opacity:0;visibility:hidden;transform:translate3d(0,42px,0);transition:visibility 0s linear .45s;will-change:opacity,transform}
+ #identity .story-chapter.is-active{opacity:1;visibility:visible;transform:translate3d(0,0,0);transition:visibility 0s}
  #identity .story-chapter .identity-intro{font-size:clamp(24px,2.7vw,40px);line-height:1.55;margin-top:24px;font-weight:650}
  #identity .story-chapter h3{font-size:clamp(27px,3vw,44px);line-height:1.3;letter-spacing:-.05em}
  #identity .story-chapter p{font-size:clamp(13px,1.1vw,16px);line-height:1.9}
  #identity .story-chapter .identity-role-block{border-top:0;padding-top:0}
- #identity .story-chapter .identity-work{padding-top:0}
- #identity .story-chapter .identity-skills{border:0}
- #identity .story-chapter .identity-process{background:transparent;color:#211a23;padding:0}
- #identity .story-chapter .identity-process-track{grid-template-columns:1fr;gap:0}
- #identity .story-chapter .identity-step{opacity:1;transform:none;min-height:0;padding:15px 0;border:0;border-top:1px solid #211a2320;background:none;grid-template-columns:32px 1fr}
- #identity .story-chapter .identity-step h3{color:#211a23;font-size:18px;margin:0 0 5px}
- #identity .story-chapter .identity-step p{color:#766b78;font-size:12px}
- #identity .story-chapter .identity-step-number{background:#ed6bdf22;color:#9b267e;border-radius:0}
- #identity .story-chapter .identity-process-count,#identity .story-chapter .identity-process-footer{display:none}
+ #identity .story-chapter h3 em{color:#c92ca1;font-style:normal}
+ #identity .story-skill-list{margin-top:28px;border-top:1px solid #211a2324}
+ #identity .story-skill-list>div{display:grid;gap:5px;padding:16px 0;border-bottom:1px solid #211a2324}
+ #identity .story-skill-list b{font-size:14px}#identity .story-skill-list span{font-size:12px;color:#756a76}
+ #identity .story-process-list{margin-top:24px;border-top:1px solid #211a2324}
+ #identity .story-process-list>div{display:grid;grid-template-columns:34px 1fr;gap:13px;padding:11px 0;border-bottom:1px solid #211a2324}
+ #identity .story-process-list b{color:#c92ca1;font:800 11px/1.5 Arial,sans-serif}
+ #identity .story-process-list span{font-size:12px;color:#756a76}#identity .story-process-list strong{display:block;color:#211a23;font-size:13px;letter-spacing:.05em}
  #identity .story-bottom{position:absolute;bottom:7%;left:8%;width:28%;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.16em;color:#80727e}
  #identity .story-line{height:2px;background:#211a2318;margin-top:16px}
  #identity .story-line:after{content:"";display:block;height:100%;background:#cf459f;width:calc(var(--nova-p)*100%)}
  #identity .identity-motion-state{color:#80727e;opacity:1}
- body.identity-story-ready #identity-details{display:none}
 }
-#identity-details{position:relative;background:#f7f3f7;color:#19161d;padding:80px max(22px,6vw) 0}
-#identity-details .identity-copy-panel{display:block;max-width:1120px;margin:auto;opacity:1;transform:none}
-#identity-details .identity-intro{max-width:850px;font-size:clamp(22px,3vw,40px);line-height:1.5}
-#identity-details .identity-work{max-width:800px;padding-bottom:60px}
-#identity-details .identity-process{margin:0 min(-22px,-6vw);padding:48px max(22px,6vw)}
-#identity-details .identity-process-heading,#identity-details .identity-step{opacity:1;transform:none}
 @media(min-width:901px){#identity .identity-dark-head{background:transparent}#identity .identity-headline h2{font-size:clamp(50px,6vw,90px);max-width:560px;color:#19161d;text-shadow:none}#identity .identity-headline h2 span:first-child,#identity .identity-overline,#identity .identity-topline{color:#19161d}#identity .identity-head-mark{display:none}#identity .identity-portrait{height:90vh;transform-origin:50% 30%}#identity .identity-fusion-type{font-size:clamp(80px,12vw,180px)!important;line-height:.88!important;mix-blend-mode:normal!important;gap:12px}}
-@media(prefers-reduced-motion:reduce){#identity.identity-section{height:auto;min-height:100vh!important}#identity .identity-light-body{position:relative}#identity .identity-portrait{transform:none!important;animation:none!important}#identity .identity-fusion-type{display:none!important}#identity .identity-dark-head{opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){#identity.identity-section{height:auto;min-height:100vh!important}#identity .identity-light-body{position:relative}#identity .identity-portrait{transform:none!important;animation:none!important}#identity .identity-fusion-type{display:none!important}#identity .identity-dark-head{opacity:1!important;transform:none!important}#identity .identity-story{display:none!important}#identity .identity-copy-panel,#identity .identity-process{display:block!important}}
 .certificate-archive{position:relative;height:285vh;background:#f7f5ef;color:#17131a;overflow:clip}
 .certificate-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff 0 18%,#f7f5ef 64%,#ebe7e8 100%)}
 .certificate-stage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 11vw,rgba(27,17,26,.045) 11vw calc(11vw + 1px)),linear-gradient(180deg,rgba(255,255,255,.72),transparent 20%,transparent 80%,rgba(30,18,29,.06));pointer-events:none}
@@ -1935,9 +1960,8 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 (()=>{const replacements={0:'assets/videos/work-01-new.mp4',2:'assets/videos/work-03-web.mp4',3:'assets/videos/work-04-new.mp4',4:'assets/videos/work-05-new.mp4',5:'assets/videos/work-06-web.mp4',6:'assets/videos/work-07-web.mp4'};document.addEventListener('click',event=>{const button=event.target.closest('[data-work-index]');const src=button&&replacements[Number(button.dataset.workIndex)];if(!src)return;event.preventDefault();event.stopImmediatePropagation();const dialog=document.getElementById('worksDialog'),tag=document.getElementById('worksDialogTag'),title=document.getElementById('worksDialogTitle'),media=document.getElementById('worksDialogMedia'),text=document.getElementById('worksDialogText');if(!dialog||!media)return;const index=Number(button.dataset.workIndex)+1;tag.textContent=String(index).padStart(2,'0')+' / SELECTED VIDEO';title.textContent=button.querySelector('h3')?.textContent||'项目视频';text.textContent='已为网页播放优化；缓冲完成后自动开始。';media.replaceChildren();const video=document.createElement('video');video.src=src;video.controls=true;video.playsInline=true;video.preload='auto';video.poster=button.querySelector('img')?.src||'';video.addEventListener('canplay',()=>video.play().catch(()=>{}),{once:true});media.append(video);dialog.classList.add('open');document.body.style.overflow='hidden';video.load();},{capture:true});})();
 </script>
 <script id="jiayi-nova-identity-scroll">
-// Keep the original biography and process readable after the pinned portrait.
-(()=>{const root=document.getElementById('identity');if(!root)return;const details=document.createElement('section');details.id='identity-details';details.setAttribute('aria-label','关于嘉仪与创作流程');const copy=root.querySelector('.identity-copy-panel'),process=root.querySelector('.identity-process');if(copy)details.append(copy);if(process)details.append(process);root.after(details)})();
 (()=>{const section=document.getElementById('identity'),panel=section?.querySelector('.identity-portrait-panel'),state=document.getElementById('identityMotionState'),prompt=document.getElementById('identityMotionPrompt');if(!section||!panel)return;let frame=0,current=0,px=0,py=0,tx=0,ty=0;const labels=['01 / WIDE PORTRAIT','02 / PUSH IN','03 / MAKE IT REAL'];const render=()=>{frame=0;const rect=section.getBoundingClientRect(),distance=Math.max(1,section.offsetHeight-innerHeight),target=Math.max(0,Math.min(1,-rect.top/distance));current+=(target-current)*.105;const zoom=Math.max(0,Math.min(1,current/.62));const type=Math.max(0,Math.min(1,(current-.5)/.34));px+=(tx-px)*.055;py+=(ty-py)*.055;section.style.setProperty('--nova-p',current.toFixed(4));section.style.setProperty('--nova-zoom',zoom.toFixed(4));section.style.setProperty('--nova-type',type.toFixed(4));section.style.setProperty('--nova-x',`${px.toFixed(2)}px`);section.style.setProperty('--nova-y',`${py.toFixed(2)}px`);if(state)state.textContent=labels[current<.3?0:current<.68?1:2];if(Math.abs(target-current)>.0008||Math.abs(tx-px)>.08||Math.abs(ty-py)>.08)frame=requestAnimationFrame(render)};const queue=()=>{if(!frame)frame=requestAnimationFrame(render)};addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});if(matchMedia('(hover:hover) and (pointer:fine)').matches){panel.addEventListener('pointermove',event=>{const r=panel.getBoundingClientRect();tx=((event.clientX-r.left)/r.width-.5)*18;ty=((event.clientY-r.top)/r.height-.5)*10;queue()},{passive:true});panel.addEventListener('pointerleave',()=>{tx=ty=0;queue()},{passive:true})}const prompts=['IDEAS, MADE REAL.','CONTENT WITH A POINT.','CREATE WHAT PEOPLE FEEL.'];let pi=0,ci=0,deleting=false;const type=()=>{if(!prompt)return;const text=prompts[pi];prompt.textContent=text.slice(0,ci);if(!deleting&&ci<text.length){ci++;setTimeout(type,36);return}if(!deleting){deleting=true;setTimeout(type,1500);return}if(ci>0){ci--;setTimeout(type,16);return}deleting=false;pi=(pi+1)%prompts.length;setTimeout(type,260)};type();render()})();
+(()=>{const root=document.getElementById('identity'),chapters=[...(root?.querySelectorAll('.story-chapter')||[])],state=document.getElementById('identityMotionState'),index=document.getElementById('identityStoryIndex');if(!root||!chapters.length)return;const labels=['01 / ABOUT ME','02 / ROLE & SKILLS','03 / HOW I WORK','04 / PROCESS'];let active=-1,frame=0;const paint=()=>{frame=0;const rect=root.getBoundingClientRect(),end=Math.max(1,root.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end)),next=Math.min(3,Math.floor(p*4));if(next!==active){active=next;chapters.forEach((chapter,i)=>{chapter.classList.toggle('is-active',i===active);chapter.setAttribute('aria-hidden',i===active?'false':'true')});if(state)state.textContent=labels[active];if(index)index.textContent=String(active+1).padStart(2,'0')}chapters.forEach((chapter,i)=>{const local=p*4-i-.5;chapter.style.opacity=i===active?String(Math.max(.78,1-Math.abs(local)*.18)):'0';chapter.style.transform=`translate3d(0,${i===active?(local*-20).toFixed(1):i<active?-42:42}px,0)`})};const request=()=>{if(!frame)frame=requestAnimationFrame(paint)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});paint()})();
 </script>
 <script id="jiayi-achievement-scroll">
 (()=>{
