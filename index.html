@@ -1344,11 +1344,11 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
       <span class="identity-photo-spark identity-photo-spark-b" aria-hidden="true">✦</span>
       <div class="identity-story" aria-label="关于嘉仪的滚动叙事">
         <div class="story-top"><span>JIAYI.EXE / CREATIVE IDENTITY</span><span>灵感不设边界</span></div>
-        <article class="story-chapter story-chapter-intro is-active">
+        <article class="story-chapter story-chapter-intro is-active" data-word="REAL">
           <div class="identity-kicker"><span class="identity-live-dot"></span> 关于我</div>
           <p class="identity-intro">我希望通过这个个人网页，<br>让你认识真实的我，<br>以及我正在探索和创造的东西。</p>
         </article>
-        <article class="story-chapter story-chapter-role">
+        <article class="story-chapter story-chapter-role" data-word="CREATE">
           <span class="identity-mini-label">01 / 我的身份与能力</span>
           <div class="identity-role-block"><h3>内容与<br>短视频运营</h3></div>
           <div class="story-skill-list">
@@ -1356,13 +1356,13 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
             <div><b>短视频运营</b><span>让创意通过视频内容被更多人看见。</span></div>
           </div>
         </article>
-        <article class="story-chapter story-chapter-work">
+        <article class="story-chapter story-chapter-work" data-word="MAKE">
           <span class="identity-mini-label">02 / 我的工作方式</span>
           <h3>灵感不是终点，<br><em>做出来</em>才有意思。</h3>
           <p>我喜欢从一个想法出发，尝试不同的表达方式，再把它变成真正看得见的内容。</p>
           <p>AI 不只是工具，短视频也不只是形式。它们都是让脑海里的想法变成现实的方式。</p>
         </article>
-        <article class="story-chapter story-chapter-process">
+        <article class="story-chapter story-chapter-process" data-word="ACTION">
           <span class="identity-mini-label">03 / 我的创作流程</span>
           <h3>FROM IDEA<br>TO ACTION.</h3>
           <div class="story-process-list">
@@ -1521,16 +1521,20 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
  #identity .identity-portrait-panel{background:#f4f0f3!important}
  #identity .identity-portrait-panel:before{inset:7% 4%;border:1px solid #291a2718;border-radius:0;transform:none!important}
  #identity .identity-portrait-panel:after{display:none}
- #identity .identity-portrait{left:38%!important;width:59%!important;height:85vh!important;bottom:0!important;transform:translate3d(var(--nova-x),var(--nova-y),0) scale(calc(1 + var(--nova-zoom)*.22))!important;transform-origin:52% 36%;animation:none!important}
+ #identity .identity-portrait{left:38%!important;width:59%!important;height:85vh!important;bottom:0!important;transform:translate3d(calc(var(--nova-x) + var(--story-person-x,0px)),var(--nova-y),0) scale(calc(1 + var(--nova-zoom)*.22)) rotate(var(--story-person-tilt,0deg))!important;transform-origin:52% 36%;animation:none!important}
  #identity .identity-story{display:block;position:absolute;z-index:10;inset:0;pointer-events:none;color:#211a23}
  #identity .story-top{position:absolute;top:7%;left:7%;right:7%;display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #211a2326;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.18em}
- #identity .story-chapter{position:absolute;left:8%;top:24%;width:35%;max-width:500px;opacity:0;visibility:hidden;transform:translate3d(0,42px,0);transition:visibility 0s linear .45s;will-change:opacity,transform}
- #identity .story-chapter.is-active{opacity:1;visibility:visible;transform:translate3d(0,0,0);transition:visibility 0s}
+ #identity .story-chapter{position:absolute;left:8%;top:24%;width:35%;max-width:500px;opacity:0;visibility:hidden;transform:translate3d(0,42px,0);will-change:opacity,transform;filter:blur(var(--story-blur,0px))}
+ #identity .story-chapter.is-active{visibility:visible}
+ #identity .story-chapter:before{content:attr(data-word);position:absolute;z-index:-1;left:-.08em;top:-.52em;font:900 clamp(72px,10vw,150px)/.8 'Exo 2',Arial,sans-serif;letter-spacing:-.09em;color:transparent;-webkit-text-stroke:1px rgba(201,44,161,.24);white-space:nowrap;transform:translateX(var(--story-word-x,0));opacity:.82}
  #identity .story-chapter .identity-intro{font-size:clamp(24px,2.7vw,40px);line-height:1.55;margin-top:24px;font-weight:650}
  #identity .story-chapter h3{font-size:clamp(27px,3vw,44px);line-height:1.3;letter-spacing:-.05em}
  #identity .story-chapter p{font-size:clamp(13px,1.1vw,16px);line-height:1.9}
  #identity .story-chapter .identity-role-block{border-top:0;padding-top:0}
  #identity .story-chapter h3 em{color:#c92ca1;font-style:normal}
+ #identity .story-chapter-intro .identity-intro{position:relative;z-index:2}
+ #identity .story-chapter-work h3{font-size:clamp(32px,3.4vw,50px)}
+ #identity .story-chapter-process{top:18%}
  #identity .story-skill-list{margin-top:28px;border-top:1px solid #211a2324}
  #identity .story-skill-list>div{display:grid;gap:5px;padding:16px 0;border-bottom:1px solid #211a2324}
  #identity .story-skill-list b{font-size:14px}#identity .story-skill-list span{font-size:12px;color:#756a76}
@@ -1562,7 +1566,7 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </style>
 <section class="certificate-archive" id="certificates" aria-labelledby="certificate-title">
   <div class="certificate-stage">
-    <header class="certificate-head"><a href="#identity">← BACK TO TIMELINE</a><span>JIAYI.exe / ARCHIVE 2026</span><h2 id="certificate-title">EARNED<br><em>NOT GIVEN.</em></h2><p>从创作实践到专业能力，把每一次认真完成的事，整理成可以回看的档案。</p></header>
+    <header class="certificate-head"><a href="#identity">← BACK TO TIMELINE</a><span>JIAYI.exe / ARCHIVE 2026</span><h2 id="certificate-title">NO LUCK.<br><em>ALL PROOF.</em></h2><p>不是运气，是每一次认真完成后，留下的证据。</p></header>
     <div class="certificate-rows" aria-label="嘉仪的荣誉与证书档案">
       <div class="certificate-row certificate-row-a">
         <figure class="certificate-card certificate-card--portrait"><img src="assets/certificates/certificate-01.jpg" alt="嘉仪荣誉证书 01" loading="lazy"><figcaption>01 / HONOUR</figcaption></figure>
@@ -1961,7 +1965,7 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 </script>
 <script id="jiayi-nova-identity-scroll">
 (()=>{const section=document.getElementById('identity'),panel=section?.querySelector('.identity-portrait-panel'),state=document.getElementById('identityMotionState'),prompt=document.getElementById('identityMotionPrompt');if(!section||!panel)return;let frame=0,current=0,px=0,py=0,tx=0,ty=0;const labels=['01 / WIDE PORTRAIT','02 / PUSH IN','03 / MAKE IT REAL'];const render=()=>{frame=0;const rect=section.getBoundingClientRect(),distance=Math.max(1,section.offsetHeight-innerHeight),target=Math.max(0,Math.min(1,-rect.top/distance));current+=(target-current)*.105;const zoom=Math.max(0,Math.min(1,current/.62));const type=Math.max(0,Math.min(1,(current-.5)/.34));px+=(tx-px)*.055;py+=(ty-py)*.055;section.style.setProperty('--nova-p',current.toFixed(4));section.style.setProperty('--nova-zoom',zoom.toFixed(4));section.style.setProperty('--nova-type',type.toFixed(4));section.style.setProperty('--nova-x',`${px.toFixed(2)}px`);section.style.setProperty('--nova-y',`${py.toFixed(2)}px`);if(state)state.textContent=labels[current<.3?0:current<.68?1:2];if(Math.abs(target-current)>.0008||Math.abs(tx-px)>.08||Math.abs(ty-py)>.08)frame=requestAnimationFrame(render)};const queue=()=>{if(!frame)frame=requestAnimationFrame(render)};addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});if(matchMedia('(hover:hover) and (pointer:fine)').matches){panel.addEventListener('pointermove',event=>{const r=panel.getBoundingClientRect();tx=((event.clientX-r.left)/r.width-.5)*18;ty=((event.clientY-r.top)/r.height-.5)*10;queue()},{passive:true});panel.addEventListener('pointerleave',()=>{tx=ty=0;queue()},{passive:true})}const prompts=['IDEAS, MADE REAL.','CONTENT WITH A POINT.','CREATE WHAT PEOPLE FEEL.'];let pi=0,ci=0,deleting=false;const type=()=>{if(!prompt)return;const text=prompts[pi];prompt.textContent=text.slice(0,ci);if(!deleting&&ci<text.length){ci++;setTimeout(type,36);return}if(!deleting){deleting=true;setTimeout(type,1500);return}if(ci>0){ci--;setTimeout(type,16);return}deleting=false;pi=(pi+1)%prompts.length;setTimeout(type,260)};type();render()})();
-(()=>{const root=document.getElementById('identity'),chapters=[...(root?.querySelectorAll('.story-chapter')||[])],state=document.getElementById('identityMotionState'),index=document.getElementById('identityStoryIndex');if(!root||!chapters.length)return;const labels=['01 / ABOUT ME','02 / ROLE & SKILLS','03 / HOW I WORK','04 / PROCESS'];let active=-1,frame=0;const paint=()=>{frame=0;const rect=root.getBoundingClientRect(),end=Math.max(1,root.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-rect.top/end)),next=Math.min(3,Math.floor(p*4));if(next!==active){active=next;chapters.forEach((chapter,i)=>{chapter.classList.toggle('is-active',i===active);chapter.setAttribute('aria-hidden',i===active?'false':'true')});if(state)state.textContent=labels[active];if(index)index.textContent=String(active+1).padStart(2,'0')}chapters.forEach((chapter,i)=>{const local=p*4-i-.5;chapter.style.opacity=i===active?String(Math.max(.78,1-Math.abs(local)*.18)):'0';chapter.style.transform=`translate3d(0,${i===active?(local*-20).toFixed(1):i<active?-42:42}px,0)`})};const request=()=>{if(!frame)frame=requestAnimationFrame(paint)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});paint()})();
+(()=>{const root=document.getElementById('identity'),chapters=[...(root?.querySelectorAll('.story-chapter')||[])],state=document.getElementById('identityMotionState'),index=document.getElementById('identityStoryIndex');if(!root||!chapters.length)return;const labels=['01 / ABOUT ME','02 / ROLE & SKILLS','03 / HOW I WORK','04 / PROCESS'],centres=[.08,.37,.66,.91];let active=-1,frame=0;const clamp=n=>Math.max(0,Math.min(1,n));const paint=()=>{frame=0;const rect=root.getBoundingClientRect(),end=Math.max(1,root.offsetHeight-innerHeight),p=clamp(-rect.top/end);let next=0,best=9;centres.forEach((c,i)=>{const d=Math.abs(p-c);if(d<best){best=d;next=i}});chapters.forEach((chapter,i)=>{const delta=p-centres[i],alpha=clamp(1-Math.abs(delta)/.24),visible=alpha>.025;chapter.classList.toggle('is-active',visible);chapter.setAttribute('aria-hidden',visible?'false':'true');chapter.style.opacity=alpha.toFixed(3);chapter.style.transform=`translate3d(${(delta*-18).toFixed(1)}px,${(delta*-115).toFixed(1)}px,0) scale(${(.96+alpha*.04).toFixed(3)})`;chapter.style.setProperty('--story-blur',`${((1-alpha)*5).toFixed(2)}px`);chapter.style.setProperty('--story-word-x',`${(delta*-90).toFixed(1)}px`)});if(next!==active){active=next;if(state)state.textContent=labels[active];if(index)index.textContent=String(active+1).padStart(2,'0')}root.style.setProperty('--story-person-x',`${(22-p*46).toFixed(1)}px`);root.style.setProperty('--story-person-tilt',`${((p-.5)*-1.2).toFixed(2)}deg`)};const request=()=>{if(!frame)frame=requestAnimationFrame(paint)};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});paint()})();
 </script>
 <script id="jiayi-achievement-scroll">
 (()=>{
