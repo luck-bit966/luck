@@ -1289,7 +1289,57 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 #home .metric strong{color:#d72caa!important;text-shadow:0 2px 14px rgba(255,255,255,.7)!important}
 #home .metric small{color:#514851!important}
 @media(max-width:900px){#home h1{color:#171218!important}#home .role,#home .desc{color:#443d45!important}}
-</style><style id="jiayi-qr-label-v2">.contact-finale__qr-card strong{font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-weight:900;line-height:1.35;letter-spacing:-.02em}.contact-finale__qr-card strong em{color:#d923a1;font-style:normal}.contact-finale__qr-card div span{margin-top:2px}</style></head><body><button id="openShowreel" type="button" hidden tabindex="-1" aria-hidden="true"></button>
+</style><style id="jiayi-qr-label-v2">.contact-finale__qr-card strong{font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-weight:900;line-height:1.35;letter-spacing:-.02em}.contact-finale__qr-card strong em{color:#d923a1;font-style:normal}.contact-finale__qr-card div span{margin-top:2px}</style><style id="jiayi-rhythm-type-v3">
+:root{--font-poster:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;--font-editorial:"Public Sans","Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif}
+/* One poster system: condensed-looking display rhythm, quieter editorial copy. */
+#home h1,#impact-numbers h3,#achievements h2,#proof-title,#identity h2,#certificate-title,#selectedWorksTitle,#contactFinaleTitle{font-family:var(--font-poster)!important;font-weight:900!important;font-kerning:normal;letter-spacing:-.085em!important}
+#home .eyebrow,#world .particle-hint,#impact-numbers .impact-kicker,#achievements .achievement-intro>span,#certificates .certificate-kicker,#projects .selected-works__eyebrow,.contact-finale__eyebrow{font-family:var(--font-editorial)!important;letter-spacing:.24em!important}
+#home h1 span{display:block;font-size:.84em;white-space:nowrap}
+#selectedWorksTitle{font-size:clamp(62px,7.2vw,108px)!important;line-height:.84!important}
+#selectedWorksTitle em{display:block;white-space:nowrap}
+#contactFinaleTitle{letter-spacing:-.075em!important}
+
+/* Keep the narratives, remove the empty waiting time. */
+@media(min-width:901px){
+ #achievements.achievement-track{height:300vh!important}
+ #identity.identity-section{height:340vh!important}
+}
+@media(max-width:900px){
+ #home h1 span{font-size:.77em;white-space:normal}
+ #selectedWorksTitle{font-size:clamp(48px,12vw,72px)!important}
+ #selectedWorksTitle em{white-space:normal}
+}
+@media(max-width:609px),(orientation:portrait){
+ #achievements.achievement-track{height:445vh!important}
+ #achievements .achievement-intro{top:102vh!important}
+ #achievements .feature-one{top:166vh!important}
+ #achievements .feature-two{top:222vh!important}
+ #achievements .feature-three{top:278vh!important}
+ #achievements .feature-four{top:334vh!important}
+ #achievements .feature-five{top:390vh!important}
+}
+
+/* Real proof first: two hero captures, two supporting captures. */
+@media(min-width:901px){
+ #impact-numbers .proof-a{left:2.2%;top:7%;width:clamp(310px,27vw,430px);height:clamp(175px,16vw,245px);z-index:6}
+ #impact-numbers .proof-c{left:3%;bottom:10%;width:clamp(300px,26vw,420px);height:clamp(170px,15.5vw,235px);z-index:6}
+ #impact-numbers .proof-b{right:2%;top:12%;width:clamp(235px,20vw,320px);height:clamp(140px,12vw,185px);opacity:.76}
+ #impact-numbers .proof-d{right:3%;bottom:16%;width:clamp(235px,20vw,320px);height:clamp(140px,12vw,185px);opacity:.76}
+ #impact-numbers .impact-core{z-index:7}
+}
+#impact-numbers .impact-proof-card img{opacity:.93;filter:saturate(.85) contrast(1.04)}
+#impact-numbers .impact-proof-card figcaption{background:linear-gradient(180deg,transparent 28%,rgba(9,5,12,.28) 58%,rgba(9,5,12,.92) 100%)}
+
+/* Smooth visual hand-offs between light and dark chapters. */
+#achievements:before{content:"";position:absolute;z-index:8;left:0;right:0;top:0;height:14vh;pointer-events:none;background:linear-gradient(180deg,rgba(11,9,13,.98),transparent)}
+#certificates{position:relative}
+#certificates:before{content:"";position:absolute;z-index:0;left:0;right:0;top:0;height:18vh;pointer-events:none;background:linear-gradient(180deg,rgba(20,15,22,.1),transparent)}
+#projects.selected-works{border-top:1px solid rgba(23,18,24,.09)}
+@media(max-width:760px){
+ #impact-numbers .impact-proof-card{opacity:.88}
+ .contact-finale h2{font-size:clamp(54px,16vw,78px)!important}
+}
+</style></head><body><button id="openShowreel" type="button" hidden tabindex="-1" aria-hidden="true"></button>
 <div class="boot" id="boot"><div><b>JIAYI<span>.exe</span></b><div class="load"><i></i></div><small style="letter-spacing:.18em;color:#c9b8d0;font-size:10px">CREATIVE IDENTITY INITIALIZING</small></div></div>
 <nav><a class="logo" href="#top">JY<span>✳</span></a><div class="navlinks"><a href="#identity">关于我</a><a href="#projects">项目</a></div><a class="contact" href="mailto:2724760294@qq.com">一起聊聊 ↗</a></nav>
 <main id="top">
