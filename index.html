@@ -1195,7 +1195,49 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 #projects.selected-works{position:relative;isolation:isolate;overflow:hidden;margin-top:0;border-top:1px solid #f08bdc88;padding:clamp(84px,10vw,144px) clamp(18px,5vw,92px) clamp(72px,9vw,128px);color:#fff;background:radial-gradient(ellipse at 10% 0,#9d246c55,transparent 35%),radial-gradient(ellipse at 94% 25%,#7543a133,transparent 38%),linear-gradient(145deg,#180d1b,#0d0b12 54%,#160b19)}
 #projects.selected-works:before{content:"";position:absolute;inset:29% -10% auto;height:190px;background:repeating-linear-gradient(-11deg,#ed91e90b 0 1px,transparent 1px 13px);transform:rotate(-7deg);pointer-events:none;z-index:-1}
 .selected-works__topline{display:flex;justify-content:space-between;gap:18px;font:700 10px/1.4 Inter,Arial,sans-serif;letter-spacing:.2em;color:#ffc0ee}.selected-works__intro{display:grid;grid-template-columns:1.5fr .7fr;gap:clamp(30px,8vw,130px);align-items:end;padding:20px 0 28px;border-bottom:1px solid #f6a4e640}.selected-works__eyebrow{font:700 10px/1.5 Inter,Arial,sans-serif;letter-spacing:.25em;color:#ff8dd2}.selected-works h2{margin:12px 0 0;font:900 clamp(52px,8.4vw,138px)/.82 Inter,Arial,sans-serif;letter-spacing:-.085em}.selected-works h2 em{display:block;font-style:normal;color:#e67bdd}.selected-works__intro p{margin:0 0 8px;color:#f2d6ec;font-size:clamp(13px,1.15vw,16px);line-height:1.8}.selected-works__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(10px,1.4vw,20px);position:relative;padding-top:58px}.selected-works__grid:before,.selected-works__grid:after{position:absolute;top:27px;font:800 10px/1.2 Inter,Arial,sans-serif;letter-spacing:.23em}.selected-works__grid:before{content:"CREATIVE / 01 — 04";left:0;color:#ff9fdc}.selected-works__grid:after{content:"COMMERCIAL / 05 — 08";right:0;color:#c9b0ff}.work-tile{position:relative;display:flex;min-height:340px;overflow:hidden;padding:0;border:1px solid #f9c4ed75;border-radius:6px;background:#211225;color:#fff;text-align:left;cursor:pointer;box-shadow:6px 8px 0 #08050b,0 0 0 1px #e977c527;transition:transform .25s ease,box-shadow .25s ease}.work-tile:hover{transform:translateY(-7px);box-shadow:0 24px 70px #e964bb33}.work-tile--wide{grid-column:span 6;min-height:395px}.work-tile--tall{grid-column:span 2}.work-tile__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s ease}.work-tile:hover .work-tile__image{transform:scale(1.05)}.work-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#10071010 33%,#0c0615e8 100%);pointer-events:none}.work-tile__top,.work-tile__bottom{position:relative;z-index:1;padding:18px;display:block;width:100%}.work-tile__top{height:92px}.work-tile__bottom{align-self:flex-end;margin-top:auto}.work-tile__num{font:italic 54px/1 Georgia,serif;color:#f38bd7}.work-tile__type{font:700 10px/1 Inter,Arial,sans-serif;letter-spacing:.14em;margin-left:6px}.work-tile__pill{position:absolute;right:16px;top:20px;padding:7px 9px;border-radius:4px;background:#e777cc;color:#240d23;font:800 9px/1 Inter,Arial,sans-serif}.work-tile h3{margin:0 0 8px;font-size:clamp(17px,1.8vw,28px);line-height:1.1}.work-tile p{margin:0;color:#f4d8ed;font-size:11px;line-height:1.6}.work-tile__meta{display:flex;justify-content:space-between;margin-top:20px;color:#ffb2e8;font:700 9px/1.3 Inter,Arial,sans-serif;letter-spacing:.08em}.work-tile__play{position:absolute;z-index:2;right:24px;top:50%;width:54px;height:54px;border:0;border-radius:50%;background:#ffffffdb;color:#29102e;font-size:18px;transform:translateY(-50%);box-shadow:0 8px 25px #0008}.work-tile--wide .work-tile__play{right:32px}.works-dialog{position:fixed;z-index:1000;inset:0;display:none;place-items:center;padding:20px;background:#100916d9;backdrop-filter:blur(10px)}.works-dialog.open{display:grid}.works-dialog__box{width:min(94vw,850px);max-height:92vh;overflow:auto;padding:22px;border:1px solid #f2a7e8;background:#190f1d;color:#fff;box-shadow:0 30px 100px #000b}.works-dialog__close{float:right;border:1px solid #efb3e7;background:#29172d;color:#fff;width:36px;height:36px;border-radius:50%;font-size:23px;cursor:pointer}.works-dialog video,.works-dialog img{display:block;width:100%;max-height:66vh;object-fit:contain;background:#080609;margin:16px 0}.works-dialog h3{font-size:clamp(24px,4vw,45px);margin:12px 42px 8px 0}.works-dialog p{color:#e8cfe3;line-height:1.7}.works-dialog__tag{color:#ff9fdc;font:800 10px/1 Inter,Arial,sans-serif;letter-spacing:.18em}@media(max-width:900px){.selected-works__intro{grid-template-columns:1fr}.work-tile--wide{grid-column:span 12}.work-tile--tall{grid-column:span 4;min-height:300px}}@media(max-width:560px){.selected-works__topline span:last-child{display:none}.selected-works h2{font-size:clamp(52px,16vw,82px)}.selected-works__grid{gap:10px}.selected-works__grid:after{display:none}.work-tile--tall{grid-column:span 6;min-height:270px}.work-tile--wide{min-height:320px}.work-tile__top,.work-tile__bottom{padding:13px}.work-tile__num{font-size:42px}.work-tile h3{font-size:17px}.work-tile__play{width:45px;height:45px;right:14px}.work-tile__pill{right:12px;top:13px}}
-</style></head><body><button id="openShowreel" type="button" hidden tabindex="-1" aria-hidden="true"></button>
+</style>
+<style id="jiayi-v19-verified-impact">
+#impact-numbers.impact-numbers{min-height:min(900px,100svh);margin:0;padding:clamp(72px,9vw,128px) clamp(18px,6vw,92px);display:grid;place-items:center;background:radial-gradient(circle at 50% 48%,rgba(218,65,190,.20),transparent 25%),radial-gradient(circle at 50% 48%,#29112d 0 18%,#140c18 45%,#08080b 78%);overflow:hidden}
+#impact-numbers .impact-orbit{position:absolute;left:50%;top:50%;width:min(74vw,760px);aspect-ratio:1;translate:-50% -50%;border:1px solid rgba(249,139,225,.28);border-radius:50%;box-shadow:0 0 0 70px rgba(232,91,210,.035),0 0 0 142px rgba(232,91,210,.025),inset 0 0 90px rgba(228,87,204,.12)}
+#impact-numbers .impact-orbit:before,#impact-numbers .impact-orbit:after{content:"";position:absolute;border-radius:50%;inset:16%;border:1px solid rgba(255,255,255,.10)}
+#impact-numbers .impact-orbit:after{inset:34%;border-color:rgba(255,121,220,.32);box-shadow:0 0 40px rgba(240,80,205,.17)}
+#impact-numbers .impact-scan{position:absolute;inset:-12%;border-radius:50%;background:conic-gradient(from 210deg,transparent 0 66%,rgba(255,108,219,.16) 72%,transparent 79%);animation:impactScan 12s linear infinite}
+#impact-numbers .impact-core{position:relative;z-index:3;width:min(590px,88vw);text-align:center}
+#impact-numbers .impact-kicker{display:inline-flex;gap:10px;align-items:center;margin-bottom:20px;color:#f4a7e2}
+#impact-numbers .impact-kicker:before,#impact-numbers .impact-kicker:after{content:"";width:28px;height:1px;background:#ee75d5}
+#impact-numbers .impact-core h3{margin:0;color:#fff;font-size:clamp(42px,7vw,94px);line-height:.9;letter-spacing:-.075em;text-shadow:0 12px 34px rgba(0,0,0,.52)}
+#impact-numbers .impact-core h3 em{display:block;color:#f080d7;font-style:normal}
+#impact-numbers .impact-core>p{max-width:490px;margin:24px auto 0;color:rgba(255,255,255,.68);font-size:12px;line-height:1.9}
+#impact-numbers .impact-badge{position:absolute;z-index:4;min-width:150px;padding:12px 14px;border:1px solid rgba(255,185,235,.3);background:rgba(25,13,29,.74);box-shadow:0 16px 40px rgba(0,0,0,.32);backdrop-filter:blur(10px);transform:rotate(var(--r,0deg));animation:impactFloat 5s ease-in-out infinite}
+#impact-numbers .impact-badge span{display:block;color:#e8b7df;font:700 8px/1.4 'DM Mono','Courier New',monospace;letter-spacing:.14em}
+#impact-numbers .impact-badge strong{display:flex;align-items:baseline;gap:3px;margin-top:7px;color:#fff;font-size:clamp(22px,3vw,40px);line-height:1;font-weight:900;letter-spacing:-.05em}
+#impact-numbers .impact-badge i{color:#f37ddb;font-size:.45em;font-style:normal;letter-spacing:0}
+#impact-numbers .impact-badge small{display:block;margin-top:7px;color:rgba(255,255,255,.58);font-size:9px}
+#impact-numbers .badge-a{left:5%;top:17%;--r:-4deg}
+#impact-numbers .badge-b{right:5%;top:18%;--r:4deg;animation-delay:-1.1s}
+#impact-numbers .badge-c{left:7%;bottom:14%;--r:3deg;animation-delay:-2.2s}
+#impact-numbers .badge-d{right:7%;bottom:13%;--r:-3deg;animation-delay:-3.1s}
+#impact-numbers .impact-detail-strip{position:absolute;z-index:5;left:50%;bottom:4%;translate:-50% 0;width:min(880px,90vw);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.14)}
+#impact-numbers .impact-detail{padding:14px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}
+#impact-numbers .impact-detail:last-child{border-right:1px solid rgba(255,255,255,.12)}
+#impact-numbers .impact-detail b{display:block;color:#fff;font-size:clamp(18px,2.2vw,30px)}
+#impact-numbers .impact-detail span{display:block;margin-top:5px;color:#a998ad;font-size:9px}
+@keyframes impactScan{to{transform:rotate(1turn)}}@keyframes impactFloat{50%{translate:0 -9px}}
+@media(max-width:760px){
+ #impact-numbers.impact-numbers{min-height:870px;padding:72px 18px 130px}
+ #impact-numbers .impact-orbit{width:94vw;top:44%}
+ #impact-numbers .impact-core{margin-top:-24px}
+ #impact-numbers .impact-core h3{font-size:clamp(46px,15vw,70px)}
+ #impact-numbers .impact-badge{min-width:132px;padding:10px}
+ #impact-numbers .impact-badge strong{font-size:26px}
+ #impact-numbers .badge-a{left:4%;top:11%}#impact-numbers .badge-b{right:3%;top:22%}
+ #impact-numbers .badge-c{left:3%;bottom:23%}#impact-numbers .badge-d{right:3%;bottom:17%}
+ #impact-numbers .impact-detail-strip{grid-template-columns:1fr 1fr;bottom:3%}
+ #impact-numbers .impact-detail{padding:9px 6px}
+}
+@media(prefers-reduced-motion:reduce){#impact-numbers .impact-scan,#impact-numbers .impact-badge{animation:none!important}}
+</style>
+</head><body><button id="openShowreel" type="button" hidden tabindex="-1" aria-hidden="true"></button>
 <div class="boot" id="boot"><div><b>JIAYI<span>.exe</span></b><div class="load"><i></i></div><small style="letter-spacing:.18em;color:#c9b8d0;font-size:10px">CREATIVE IDENTITY INITIALIZING</small></div></div>
 <nav><a class="logo" href="#top">JY<span>✳</span></a><div class="navlinks"><a href="#about">关于我</a><a href="#projects">项目</a><a href="#tools">AI 工具</a><a href="#contact">联系</a></div><a class="contact" href="mailto:2724760294@qq.com">一起聊聊 ↗</a></nav>
 <main id="top">
@@ -1211,73 +1253,55 @@ body.ready .eyebrow{animation:up .5s .2s both}body.ready h1{animation:up .7s .35
 </div>
 <section class="world-section reveal" id="world"><div class="world-topbar"><a href="#top" class="world-logo">JIAYI<span>.exe</span> ✦</a><div class="world-links"><a href="#top">首页</a><a href="#about">关于我</a><a href="#tools">AI 工具</a><a href="#projects">项目</a><a href="#contact">联系</a></div><a class="world-contact" href="mailto:2724760294@qq.com">一起聊聊 ✦</a></div><div class="world-copy"><h2>WELCOME / 02</h2><p>这是我的小小世界。<br>灵感、内容、视觉和正在发生的实验，都从这里开始。</p></div><div class="world-portrait" aria-label="嘉仪的数字分身"><img class="world-portrait-img" src="assets/characters/jiayi-pink-floral-seated.png" alt="嘉仪的粉色造型人物形象" fetchpriority="high" /></div><div class="world-index" aria-hidden="true"><b>02</b><i></i><b>04</b></div><div class="world-scroll-mark" aria-hidden="true">SCROLL</div><div class="particle-stage"><canvas id="particleWorld" aria-label="嘉仪"></canvas><div class="particle-hint">MOVE TO EXPLORE / CLICK TO SCATTER</div></div></section>
 <section class="impact-numbers" id="impact-numbers" aria-labelledby="impact-title">
-    <div class="impact-heading">
-      <div>
-        <span class="impact-kicker">IMPACT / SELECTED RESULTS</span>
-        <h3 id="impact-title">创意，不止被看见。<em>也能带来结果。</em></h3>
-      </div>
-      <p>来自不同项目与账号的阶段性成果<br>各项数据按对应项目统计口径呈现</p>
-    </div>
-    <div class="impact-primary-grid">
-      <article class="impact-stat impact-stat-feature">
-        <span class="impact-index">01 / BUSINESS GROWTH</span>
-        <div class="impact-value"><span class="impact-counter" data-target="81" data-decimals="0">0</span><span class="impact-unit">万+</span></div>
-        <p>海外商业项目 GMV</p>
-        <span class="impact-underline"></span>
-      </article>
-      <article class="impact-stat">
-        <span class="impact-index">02 / EFFICIENCY</span>
-        <div class="impact-value"><span class="impact-counter" data-target="2.20" data-decimals="2">0.00</span></div>
-        <p>项目 ROI</p>
-        <span class="impact-underline"></span>
-      </article>
-      <article class="impact-stat">
-        <span class="impact-index">03 / PRODUCTION</span>
-        <div class="impact-value"><span class="impact-counter" data-target="500" data-decimals="0">0</span><span class="impact-unit">+</span></div>
-        <p>商业项目素材产出</p>
-        <span class="impact-underline"></span>
-      </article>
-      <article class="impact-stat impact-stat-dark">
-        <span class="impact-index">04 / VIRAL REACH</span>
-        <div class="impact-value"><span class="impact-counter" data-target="240" data-decimals="0">0</span><span class="impact-unit">万+</span></div>
-        <p>单条视频最高播放量</p>
-        <span class="impact-underline"></span>
-      </article>
-    </div>
-    <div class="impact-account-row">
-      <div class="impact-account-label"><span>ACCOUNT GROWTH</span><b>从内容到用户沉淀 ↗</b></div>
-      <div class="impact-account-stat">
-        <strong><span class="impact-counter" data-target="10" data-decimals="0">0</span><i>万+</i></strong>
-        <span>知识付费账号全网粉丝</span>
-      </div>
-      <div class="impact-account-stat">
-        <strong><span class="impact-counter" data-target="8000" data-decimals="0">0</span><i>+</i></strong>
-        <span>私域用户</span>
-      </div>
-      <div class="impact-account-stat">
-        <strong><i>¥</i><span class="impact-counter" data-target="1.5" data-decimals="1">0.0</span><i>万/月</i></strong>
-        <span>账号月均变现</span>
-      </div>
-      <div class="impact-account-note">AI 新账号曾在 1 周内冷启动至 1 万粉</div>
-    </div>
+  <div class="impact-orbit" aria-hidden="true"><i class="impact-scan"></i></div>
+  <div class="impact-core">
+    <span class="impact-kicker">VERIFIED IMPACT / 2026</span>
+    <h3 id="impact-title">让数据<br><em>替内容说话。</em></h3>
+    <p>从单条作品的传播，到多个账号的长期增长。每一个数字都来自你提供的平台截图，并按不同账号与作品分别呈现。</p>
+  </div>
+  <article class="impact-badge badge-a">
+    <span>ACCOUNT / TOTAL LIKES</span>
+    <strong><span class="impact-counter" data-target="503.9" data-decimals="1">0.0</span><i>万</i></strong>
+    <small>账号累计获赞</small>
+  </article>
+  <article class="impact-badge badge-b">
+    <span>ACCOUNT / FOLLOWERS</span>
+    <strong><span class="impact-counter" data-target="12.5" data-decimals="1">0.0</span><i>万</i></strong>
+    <small>单账号粉丝</small>
+  </article>
+  <article class="impact-badge badge-c">
+    <span>TOP VIDEO / VIEWS</span>
+    <strong><span class="impact-counter" data-target="131.9" data-decimals="1">0.0</span><i>万</i></strong>
+    <small>本次截图最高单条播放</small>
+  </article>
+  <article class="impact-badge badge-d">
+    <span>VIDEO / ENGAGEMENT</span>
+    <strong><span class="impact-counter" data-target="3.9" data-decimals="1">0.0</span><i>万</i></strong>
+    <small>79.5万播放作品点赞</small>
+  </article>
+  <div class="impact-detail-strip" aria-label="作品互动明细">
+    <div class="impact-detail"><b>4,760</b><span>评论</span></div>
+    <div class="impact-detail"><b>1,662</b><span>分享</span></div>
+    <div class="impact-detail"><b>4,612</b><span>收藏</span></div>
+    <div class="impact-detail"><b>114.6万</b><span>另一账号累计获赞</span></div>
+  </div>
 </section>
-
 <section class="achievement-track" id="achievements" aria-labelledby="achievement-title">
   <div class="achievement-scene" aria-hidden="true">
     <div class="achievement-vignette"></div>
     <div class="achievement-axis"><i></i><b>RESULTS<br>IN MOTION</b><i></i></div>
-    <div class="achievement-certificate certificate-a"><span>01 / PERFORMANCE</span><strong>$812,946</strong><small>TikTok 累计 GMV</small></div>
-    <div class="achievement-certificate certificate-b"><span>02 / COMMUNITY</span><strong>10.5万+</strong><small>全网粉丝增长</small></div>
-    <div class="achievement-certificate certificate-c"><span>03 / RECOGNITION</span><strong>11 项</strong><small>省级荣誉</small></div>
+    <div class="achievement-certificate certificate-a"><span>01 / ACCOUNT REACH</span><strong>503.9万</strong><small>账号累计获赞</small></div>
+    <div class="achievement-certificate certificate-b"><span>02 / FOLLOWERS</span><strong>12.5万</strong><small>单账号粉丝</small></div>
+    <div class="achievement-certificate certificate-c"><span>03 / TOP VIEW</span><strong>131.9万</strong><small>截图最高单条播放</small></div>
   </div>
   <div class="achievement-content">
-    <header class="achievement-intro" id="achievement-title"><span>WHY RESULTS MATTER</span><h2><b>让内容</b><b>产生增长，</b><b>让增长</b><b>看得见。</b></h2><p>从内容生产、账号增长到商业投放，每一次结果都能被复盘、被验证。</p></header>
+    <header class="achievement-intro" id="achievement-title"><span>WHY RESULTS MATTER</span><h2><b>让内容</b><b>产生增长，</b><b>让增长</b><b>看得见。</b></h2><p>从作品互动到账号增长，数据不只是成绩，也是内容方法被验证后的回声。</p></header>
     <div class="achievement-features" aria-label="嘉仪的核心成效">
-      <article class="achievement-feature feature-left feature-one"><span class="achievement-icon">◎</span><h3>商业结果<br>真实落地</h3><p>负责 TikTok 短视频与广告投放，累计实现 <b class="metric">$812,946 GMV</b>，整体 <b class="metric">ROI 2.20</b>。</p></article>
-      <article class="achievement-feature feature-right feature-two"><span class="achievement-icon">▦</span><h3>增长不是<br>偶然发生</h3><p>从 0 到 <b class="metric">10.5万+ 全网粉丝</b>，完成 <b class="metric">20,847+ 订单</b> 与 <b class="metric">8000+ 私域用户</b>沉淀。</p></article>
-      <article class="achievement-feature feature-left feature-three"><span class="achievement-icon">◌</span><h3>素材有量<br>也有爆发</h3><p>完成 <b class="metric">500+ 素材测试</b>，产出 <b class="metric">50+ 百万播放</b>素材，单条最高 <b class="metric">230 万+</b>。</p></article>
-      <article class="achievement-feature feature-right feature-four"><span class="achievement-icon">¥</span><h3>每一笔投放<br>清晰可见</h3><p>广告消耗 <b class="metric">$369,521</b>，围绕素材、产品与转化持续迭代，把内容变成可衡量的回报。</p></article>
-      <article class="achievement-feature feature-centre feature-five"><span class="achievement-icon">»</span><h3>荣誉与执行<br>一起向前</h3><p>国家级创新创业赛事一等奖；<b class="metric">省级 11 项、校级 50+ 项</b>荣誉与实践成果。</p></article>
+      <article class="achievement-feature feature-left feature-one"><span class="achievement-icon">◎</span><h3>一个账号<br>持续被看见</h3><p>账号累计实现 <b class="metric">503.9万获赞</b>，沉淀 <b class="metric">12.5万粉丝</b>，影响力来自长期内容积累。</p></article>
+      <article class="achievement-feature feature-right feature-two"><span class="achievement-icon">▦</span><h3>作品传播<br>不是偶然</h3><p>本次截图中单条最高播放 <b class="metric">131.9万</b>，其他作品达到 <b class="metric">82.0万、79.5万</b>。</p></article>
+      <article class="achievement-feature feature-left feature-three"><span class="achievement-icon">◌</span><h3>互动数据<br>有迹可循</h3><p>79.5万播放作品获得 <b class="metric">3.9万点赞</b>、4760评论、1662分享与4612收藏。</p></article>
+      <article class="achievement-feature feature-right feature-four"><span class="achievement-icon">✦</span><h3>多账号运营<br>形成矩阵</h3><p>另一账号实现 <b class="metric">114.6万获赞</b> 与 <b class="metric">3.6万粉丝</b>，内容能力可迁移、可复用。</p></article>
+      <article class="achievement-feature feature-centre feature-five"><span class="achievement-icon">»</span><h3>内容被看见<br>结果被记住</h3><p>39.4万与36.7万播放作品持续扩展触达，让每一次创作都留下可验证的增长证据。</p></article>
     </div>
   </div>
 </section>
