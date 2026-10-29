@@ -1912,7 +1912,7 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
  #identity .identity-floating-card-two{right:5%!important}
 }
 </style>
-<style id="jiayi-editorial-reduction">
+<style id="jiayi-v22-unified-visual-system">
 /* Keep the identity composition focused on the interactive portrait. */
 #identity .identity-filmstrip,#identity .identity-floating-card-two{display:none!important}
 #identity .identity-floating-card-one{left:5%!important;bottom:12%!important}
@@ -1965,6 +1965,195 @@ body.world-reference-active nav .contact{border-color:#eb76ce!important;backgrou
 #achievements .feature-one .metric:after{transform:scaleX(1)}
 @media(min-width:610px) and (orientation:landscape){#achievements .achievement-feature .metric{font-size:1.08em}}
 @media(prefers-reduced-motion:reduce){#achievements .achievement-feature .metric:after{transition:none;transform:scaleX(1)}}
+
+/* V22 unified visual language — replaces the previous final visual patch. */
+:root{
+ --brand-ink:#0b0a0f;--brand-surface:#151118;--brand-surface-2:#21141f;
+ --brand-paper:#f5f1f4;--brand-white:#f8f5f7;--brand-pink:#ef61c8;
+ --brand-pink-soft:#f6a7df;--brand-muted:#9e929e;--brand-line:rgba(244,150,220,.26);
+ --brand-max:1240px;--brand-gutter:clamp(20px,5vw,76px);
+ --brand-title:clamp(48px,7vw,108px);--brand-ease:cubic-bezier(.2,.75,.2,1);
+ --brand-fast:.28s;--brand-slow:.72s;
+}
+html{background:var(--brand-ink);scrollbar-color:var(--brand-pink) var(--brand-ink)}
+body{background:var(--brand-ink);color:var(--brand-white);font-family:"Public Sans","Noto Sans SC",Inter,Arial,sans-serif}
+::selection{background:var(--brand-pink);color:var(--brand-ink)}
+nav{height:70px!important;padding-inline:var(--brand-gutter)!important;border-bottom:1px solid rgba(20,15,21,.09)!important;background:rgba(245,241,244,.86)!important;backdrop-filter:blur(18px) saturate(1.1)!important}
+nav .logo,nav .navlinks a,nav .contact{letter-spacing:.04em}
+nav .contact{border-radius:999px!important}
+
+/* Hero: one cover image, one headline, quieter supporting objects. */
+#home.hero{min-height:calc(100svh - 70px)!important;background:var(--brand-paper)!important}
+#home .copy{width:min(52vw,680px);padding-left:var(--brand-gutter);padding-right:20px}
+#home h1{max-width:650px;margin:18px 0 24px;font-size:clamp(58px,7.3vw,108px);line-height:.79;letter-spacing:-.09em}
+#home h1 span{color:var(--brand-pink);text-shadow:none;transform:none}
+#home .eyebrow{color:#6d626e;letter-spacing:.24em}
+#home .hand{margin-bottom:18px;border-bottom:2px solid var(--brand-pink);font-family:"Public Sans","Noto Sans SC",sans-serif;font-size:clamp(17px,1.45vw,22px);font-weight:600;letter-spacing:-.03em;transform:none}
+#home .role{font-size:12px;letter-spacing:.02em}
+#home .desc{max-width:500px;color:#706570;font-size:13px;line-height:1.85}
+#home .actions{margin-top:20px;gap:9px}
+#home .btn{padding:12px 18px;border-color:#2a222a;background:rgba(255,255,255,.22);transition:transform var(--brand-fast) var(--brand-ease),background var(--brand-fast)}
+#home .btn.primary{background:var(--brand-ink)}
+#home .tags{margin-top:20px;color:#746a75}
+#home .metrics{gap:24px;margin-top:24px}
+#home .metric{border-left:1px solid var(--brand-pink);padding-left:11px}
+#home .metric strong{font-size:clamp(23px,2.25vw,32px);font-variant-numeric:tabular-nums}
+#home #heroVideo,#home .hero-video{width:60%!important;object-position:48% center!important;filter:saturate(.82) contrast(1.035) brightness(.99)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.12) 16%,rgba(0,0,0,.78) 43%,#000 70%)!important;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.12) 16%,rgba(0,0,0,.78) 43%,#000 70%)!important}
+#home .hero-video-shade{background:linear-gradient(90deg,var(--brand-paper) 0%,rgba(245,241,244,.98) 29%,rgba(245,241,244,.72) 46%,rgba(245,241,244,.08) 72%,transparent 100%)!important}
+#home .sticker{border-radius:2px;border-color:rgba(26,18,28,.16);background:rgba(248,245,247,.68);box-shadow:0 14px 38px rgba(26,16,26,.12);backdrop-filter:blur(12px)}
+#home .tools{right:1.5%;top:23%;transform:scale(.88)}
+#home .note{left:7%;bottom:26%;font-size:14px;transform:rotate(-4deg) scale(.9)}
+#home .project{right:2.5%;bottom:14%;width:168px;transform:scale(.9)}
+.hero-bridge .bridge-pill{border-color:var(--brand-line);background:rgba(12,10,15,.88);box-shadow:none}
+
+/* Particle world: keep the interaction, reduce competing circles and chrome. */
+#world.world-section{background:radial-gradient(ellipse at 38% 50%,rgba(111,22,91,.34),transparent 33%),linear-gradient(122deg,#09080d 0%,#171019 58%,#0a090d 100%)!important}
+#world.world-section:before{inset:11% 35% 14% 8%!important;border-color:rgba(239,97,200,.2)!important;transform:rotate(-3deg)!important}
+#world .world-topbar{border-bottom-color:rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(8,7,11,.82),transparent)}
+#world .world-contact{border-color:rgba(239,97,200,.52);background:rgba(255,255,255,.02)}
+#world .particle-stage{left:7vw!important;top:16%!important;width:min(56vw,820px)!important;height:68%!important}
+#world #particleWorld{filter:drop-shadow(0 0 14px rgba(239,97,200,.38))!important}
+#world .world-portrait{right:4vw!important;width:min(38vw,575px)!important;height:95%!important}
+#world .world-portrait-img{filter:drop-shadow(-14px 18px 32px rgba(239,97,200,.19))!important}
+#world .particle-hint{color:#aa9eaa!important;letter-spacing:.22em!important}
+
+/* Data: real screenshots read as editorial evidence, not a dashboard. */
+#impact-numbers.impact-numbers{min-height:104svh;padding:clamp(60px,7vw,96px) var(--brand-gutter) 126px;background:radial-gradient(ellipse at 50% 48%,rgba(111,19,88,.34),transparent 34%),linear-gradient(135deg,#09080d,#181019 58%,#0b090d)!important}
+#impact-numbers .impact-orbit{width:min(58vw,690px);border-color:rgba(239,97,200,.17);box-shadow:none}
+#impact-numbers .impact-orbit:before{inset:28%;border-color:rgba(255,255,255,.06)}
+#impact-numbers .impact-orbit:after{inset:46%;border-color:rgba(239,97,200,.16)}
+#impact-numbers .impact-scan{opacity:.24;animation-duration:20s}
+#impact-numbers .impact-core{width:min(660px,68vw)}
+#impact-numbers .impact-kicker{color:var(--brand-pink-soft)}
+#impact-numbers .impact-core h3{font-size:clamp(58px,7.4vw,108px);line-height:.8;letter-spacing:-.085em}
+#impact-numbers .impact-core h3 em{color:var(--brand-pink)}
+#impact-numbers .impact-core>p{max-width:460px;color:rgba(248,245,247,.68);font-size:12px}
+#impact-numbers .impact-proof-card{width:clamp(260px,23vw,360px);height:clamp(150px,13.2vw,205px);border-color:rgba(246,167,223,.32);background:#110c13;box-shadow:0 22px 58px rgba(0,0,0,.42);--r:0deg!important}
+#impact-numbers .impact-proof-card:hover{transform:translateY(-7px) scale(1.018)}
+#impact-numbers .impact-proof-card img{opacity:.78;filter:saturate(.55) contrast(1.08)}
+#impact-numbers .impact-proof-card figcaption{padding:17px;background:linear-gradient(180deg,transparent 20%,rgba(8,6,10,.18) 48%,rgba(8,6,10,.94))}
+#impact-numbers .impact-proof-card figcaption>span{color:var(--brand-pink-soft);font-size:8px;letter-spacing:.16em}
+#impact-numbers .impact-proof-card strong{margin-top:8px;font-size:clamp(48px,4.7vw,74px);letter-spacing:-.065em}
+#impact-numbers .proof-a{left:3.4%;top:8%}#impact-numbers .proof-b{right:3.4%;top:12%}
+#impact-numbers .proof-c{left:5%;bottom:14%}#impact-numbers .proof-d{right:5%;bottom:13%}
+#impact-numbers .impact-detail-strip{width:min(900px,84vw);border-top-color:rgba(255,255,255,.14)}
+#impact-numbers .impact-detail{border-left-color:rgba(255,255,255,.1)}
+#impact-numbers .impact-detail:last-child{border-right-color:rgba(255,255,255,.1)}
+#impact-numbers .impact-detail b{font-variant-numeric:tabular-nums}
+
+/* Results: preserve scroll narrative while removing the second radar dashboard look. */
+#achievements.achievement-track{background:var(--brand-ink)}
+#achievements .achievement-scene{background:radial-gradient(ellipse at 50% 48%,rgba(115,22,89,.3),transparent 35%),linear-gradient(180deg,#0b090d,#111015 72%,#09090c)!important}
+#achievements .achievement-vignette{background:linear-gradient(180deg,rgba(0,0,0,.14),transparent 26%,transparent 75%,rgba(0,0,0,.45)),repeating-linear-gradient(90deg,transparent 0 12vw,rgba(255,255,255,.014) 12vw calc(12vw + 1px))}
+#achievements .achievement-axis{width:min(54vw,690px);height:min(72vh,660px);border-color:rgba(239,97,200,.13);box-shadow:none}
+#achievements .achievement-axis:before{inset:18%;border-color:rgba(255,255,255,.045)}
+#achievements .achievement-axis:after{inset:38%;border-color:rgba(239,97,200,.08)}
+#achievements .achievement-axis b{font-size:clamp(26px,3.4vw,50px);letter-spacing:-.07em}
+#achievements .achievement-certificate{border-color:rgba(248,245,247,.2);background:rgba(19,15,21,.7);box-shadow:0 18px 50px rgba(0,0,0,.35);backdrop-filter:blur(4px)}
+#achievements .achievement-certificate strong{color:var(--brand-pink)}
+#achievements .achievement-intro{width:min(100% - 48px,980px)}
+#achievements .achievement-intro>span{color:var(--brand-pink-soft)}
+#achievements .achievement-intro h2{font-size:clamp(52px,7vw,100px);line-height:.81;letter-spacing:-.08em}
+#achievements .achievement-intro h2 b:nth-child(2),#achievements .achievement-intro h2 b:nth-child(3){color:var(--brand-pink)}
+#achievements .achievement-intro p{max-width:520px;color:rgba(248,245,247,.76)}
+#achievements .achievement-feature{text-shadow:0 8px 28px rgba(0,0,0,.68)}
+#achievements .achievement-feature h3{font-size:clamp(19px,1.55vw,25px);letter-spacing:-.025em}
+#achievements .achievement-feature p{color:rgba(248,245,247,.76);line-height:1.58}
+#achievements .achievement-feature .metric{color:var(--brand-pink);text-shadow:0 0 16px rgba(239,97,200,.18)}
+.achievement-proof{background:linear-gradient(180deg,transparent 0,var(--brand-paper) 34vh);color:#171218}
+.achievement-proof-head{border-bottom-color:rgba(23,18,24,.14)}
+.achievement-proof h2{letter-spacing:-.065em}
+.achievement-proof h2 em{color:#8a7e89}
+.achievement-proof-list article{border-bottom-color:rgba(23,18,24,.13)}
+
+/* Identity: keep 3D pose changes, remove the persistent soft-focus veil. */
+#identity .identity-portrait-panel{background:#f3eff2!important}
+#identity .identity-portrait-panel:before{border-color:rgba(239,97,200,.18)!important}
+#identity .identity-story-pose{--pose-depth-blur:0px!important;filter:drop-shadow(var(--pose-shadow-x,0px) 28px var(--pose-shadow-blur,38px) rgba(28,14,28,var(--pose-shadow-alpha,.19))) contrast(1.035)!important}
+#identity .story-chapter{filter:none!important}
+#identity .story-chapter:before{-webkit-text-stroke-color:rgba(239,97,200,.17)}
+#identity .story-chapter h3 em,#identity .story-process-list b{color:#c92ca1}
+#identity .story-line:after{background:var(--brand-pink)}
+#identity .identity-photo-spark{color:var(--brand-pink)}
+#identity .identity-process{background:var(--brand-surface)}
+#identity .identity-step{border-color:rgba(248,245,247,.13);background:rgba(255,255,255,.018)}
+
+/* Certificates and portfolio: preserve structure, align type, spacing and edge treatment. */
+#certificates.certificate-archive{background:var(--brand-paper)}
+#certificates .certificate-stage{background:radial-gradient(circle at 50% 44%,#fff 0 16%,var(--brand-paper) 62%,#eae4e8 100%)}
+#certificates .certificate-head h2{font-size:clamp(48px,6.2vw,88px);line-height:.81;letter-spacing:-.085em}
+#certificates .certificate-head h2 em{color:var(--brand-pink)}
+#certificates .certificate-card{border-color:rgba(26,18,26,.14);box-shadow:0 15px 34px rgba(26,18,26,.1)}
+#certificates .certificate-card:hover{box-shadow:0 22px 46px rgba(26,18,26,.17)}
+#certificates .certificate-progress i{background:linear-gradient(90deg,var(--brand-pink) var(--cert-progress,0%),rgba(30,20,29,.15) var(--cert-progress,0%))}
+#projects.selected-works{padding:clamp(78px,8vw,118px) var(--brand-gutter) clamp(78px,8vw,118px);background:radial-gradient(ellipse at 12% 0,rgba(121,27,91,.35),transparent 34%),linear-gradient(145deg,#130d15,#0d0b10 58%,#160d16)}
+#projects.selected-works:before{opacity:.5}
+#projects .selected-works__intro{grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(36px,7vw,110px);padding:18px 0 34px}
+#projects.selected-works h2{max-width:820px;font-size:clamp(58px,7.5vw,112px);line-height:.8;letter-spacing:-.09em}
+#projects.selected-works h2 em{color:var(--brand-pink)}
+#projects .selected-works__intro p{max-width:390px;color:#cdbdca}
+#projects .selected-works__grid{gap:clamp(12px,1.35vw,19px);padding-top:54px}
+#projects .work-tile{border-color:rgba(246,167,223,.3);border-radius:2px;background:#171019;box-shadow:5px 6px 0 #08060a;transition:transform var(--brand-fast) var(--brand-ease),box-shadow var(--brand-fast)}
+#projects .work-tile:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(239,97,200,.17)}
+#projects .work-tile__image{opacity:.88}
+#projects .work-tile__pill{border-radius:2px;background:var(--brand-pink)}
+#projects .work-tile__num{color:var(--brand-pink)}
+#projects .works-dialog{background:rgba(7,5,9,.9);backdrop-filter:blur(16px)}
+#projects .works-dialog__box{border-color:rgba(246,167,223,.42);background:#120d14}
+#projects .works-dialog__close{border-radius:2px;border-color:rgba(246,167,223,.5)}
+
+@media(max-width:900px){
+ :root{--brand-gutter:clamp(18px,5vw,34px)}
+ #home .copy{width:100%;padding:36px var(--brand-gutter) 52vh}
+ #home h1{max-width:720px;font-size:clamp(52px,11vw,84px)}
+ #home #heroVideo,#home .hero-video{width:100%!important;height:62%!important;object-position:center 34%!important;-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.48) 18%,#000 37%,#000 100%)!important;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.48) 18%,#000 37%,#000 100%)!important}
+ #home .hero-video-shade{background:linear-gradient(180deg,var(--brand-paper) 0%,rgba(245,241,244,.96) 30%,rgba(245,241,244,.23) 61%,transparent 78%)!important}
+ #home .tools{right:4%;top:51%;transform:scale(.78)}
+ #home .note{left:5%;bottom:18%;transform:rotate(-4deg) scale(.8)}
+ #home .project{right:4%;bottom:7%;transform:scale(.78)}
+ #projects .selected-works__intro{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ nav{height:62px!important}
+ #world.world-section{min-height:720px!important}
+ #world.world-section:before{inset:12% -18% 38% -25%!important}
+ #world .particle-stage{left:3vw!important;top:10%!important;width:94vw!important;height:47%!important}
+ #world .world-portrait{right:-7vw!important;width:78vw!important;height:58%!important}
+ #impact-numbers.impact-numbers{min-height:1000px;padding:64px 14px 150px}
+ #impact-numbers .impact-core{width:92vw}
+ #impact-numbers .impact-core h3{font-size:clamp(48px,14vw,68px)}
+ #impact-numbers .impact-orbit{width:112vw;opacity:.55}
+ #impact-numbers .impact-proof-card{width:45vw;height:136px}
+ #impact-numbers .impact-proof-card strong{font-size:34px}
+ #impact-numbers .proof-a{left:2%;top:7%}#impact-numbers .proof-b{right:2%;top:19%}
+ #impact-numbers .proof-c{left:2%;bottom:23%}#impact-numbers .proof-d{right:2%;bottom:17%}
+ #achievements .achievement-axis{width:108vw;height:52vh;opacity:.55}
+ #achievements .achievement-intro h2{font-size:clamp(48px,14vw,72px)}
+ .achievement-proof{padding-left:22px;padding-right:22px}
+ #identity .identity-story-pose{filter:drop-shadow(0 22px 30px rgba(28,14,28,.16)) contrast(1.03)!important}
+ #certificates .certificate-head h2{font-size:clamp(40px,12.5vw,60px)}
+ #projects.selected-works{padding-inline:18px}
+ #projects.selected-works h2{font-size:clamp(50px,15vw,76px);line-height:.83}
+ #projects .work-tile{box-shadow:3px 4px 0 #08060a}
+}
+@media(max-width:560px){
+ #home .copy{padding-bottom:49vh}
+ #home .desc{font-size:12px}
+ #home .metrics{gap:14px}
+ #home .metric strong{font-size:22px}
+ #home .tools{top:54%;right:2%}
+ #home .note{bottom:16%}
+ #home .project{bottom:5%;right:2%}
+ #projects .selected-works__grid{padding-top:48px}
+ #projects .work-tile--wide{min-height:310px}
+ #projects .work-tile--tall{min-height:280px}
+ #projects .work-tile__pill{padding:6px 7px}
+}
+@media(prefers-reduced-motion:reduce){
+ #impact-numbers .impact-scan{animation:none}
+ #identity .identity-story-pose{transform:none!important;filter:drop-shadow(0 18px 28px rgba(28,14,28,.14))!important}
+}
+
 </style>
 <script id="jiayi-identity-outfit-erase-script">
 (()=>{const panel=document.querySelector('#identity .identity-portrait-panel');const canvas=panel?.querySelector('.identity-outfit-erase');if(!panel||!canvas)return;const under=panel.querySelector('.identity-portrait');const top=new Image();top.src='assets/characters/jiayi-lace-lookback.png';top.alt='';const sources=['assets/characters/jiayi-punk-crouch.png','assets/characters/jiayi-lace-lookback.png','assets/characters/jiayi-street-headphones.png'];panel.querySelectorAll('.identity-film-frame img').forEach((img,i)=>{img.src=sources[i];});panel.querySelectorAll('.identity-floating-card img').forEach((img,i)=>{img.src=sources[i===0?0:2];});const study=panel.querySelector('.yami-turnaround-card img');if(study){study.src=sources[1];study.alt='嘉仪白蕾丝造型人物档案';}const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced)return;const ctx=canvas.getContext('2d');let ready=false;function draw(){const rect=canvas.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);canvas.width=Math.max(1,Math.round(rect.width*d));canvas.height=Math.max(1,Math.round(rect.height*d));ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,rect.width,rect.height);const maxH=Math.min(rect.height,690);const ratio=Math.min(rect.width/top.naturalWidth,maxH/top.naturalHeight);const w=top.naturalWidth*ratio,h=top.naturalHeight*ratio,x=(rect.width-w)/2,y=rect.height-h;ctx.drawImage(top,x,y,w,h);ready=true;}top.addEventListener('load',draw,{once:true});if(top.complete)draw();new ResizeObserver(draw).observe(panel);function erase(event){if(!ready)return;const r=canvas.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top,brush=Math.max(58,Math.min(112,r.width*.13));const g=ctx.createRadialGradient(x,y,brush*.22,x,y,brush);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.72,'rgba(0,0,0,.92)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.save();ctx.globalCompositeOperation='destination-out';ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,brush,0,Math.PI*2);ctx.fill();ctx.restore();panel.classList.add('is-erasing');}canvas.addEventListener('pointerdown',event=>{canvas.setPointerCapture(event.pointerId);erase(event)});canvas.addEventListener('pointermove',event=>{if(event.buttons||event.pressure>0)erase(event)});})();
